@@ -1,0 +1,12 @@
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\Lib.Sql.DataTypes.csproj.AssemblyReference.cache
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\Lib.Sql.DataTypes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\Lib.Sql.DataTypes.AssemblyInfoInputs.cache
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\Lib.Sql.DataTypes.AssemblyInfo.cs
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\Lib.Sql.DataTypes.csproj.CoreCompileInputs.cache
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\bin\Debug\net5.0\Lib.Sql.DataTypes.deps.json
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\bin\Debug\net5.0\Lib.Sql.DataTypes.dll
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\bin\Debug\net5.0\ref\Lib.Sql.DataTypes.dll
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\bin\Debug\net5.0\Lib.Sql.DataTypes.pdb
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\Lib.Sql.DataTypes.dll
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\ref\Lib.Sql.DataTypes.dll
+C:\Users\dibdbg\source\repos\Lib.Sql\Lib.Sql.DataTypes\obj\Debug\net5.0\Lib.Sql.DataTypes.pdb

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Public Domain. See License.txt -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Copyright">
+		<Authors>Daniel Giversen 2021</Authors>
+		<Company />
+		<Copyright>Public Domain</Copyright>
+		<PackageLicenseFile>..\LICENSE.txt</PackageLicenseFile>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Build">
+		<TargetFramework>net5.0</TargetFramework>
+		<OutputType>Library</OutputType>
+		<LangVersion>latest</LangVersion>
+		<PlatformTarget>x64</PlatformTarget>
+		<Platforms>win10-x64</Platforms>
+		<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+		<Optimize>true</Optimize>
+		<SignAssembly>False</SignAssembly>
+		<ErrorReport>prompt</ErrorReport>
+		<Configurations>Debug;Release</Configurations>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Version">
+		<Version>1.0.0</Version>
+		<AssemblyVersion>$(Version).1</AssemblyVersion>
+		<FileVersion>$(AssemblyVersion)</FileVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Identification">
+		<RootNamespace>Lib.Common</RootNamespace>
+		<Description>Common extension library for C#</Description>
+		<PackageId>$(RootNamespace)_$(AssemblyVersion)_$(Platform)</PackageId>
+		<AssemblyName>$(RootNamespace)_$(AssemblyVersion)_$(Platform)</AssemblyName>
+		<Product>$(RootNamespace)</Product>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Analyzis">
+		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<WarningLevel>4</WarningLevel>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Build Debug" Condition="'$(Configuration)' == 'Debug'">
+		<DefineConstants>TRACE;DEBUG</DefineConstants>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<DocumentationFile>.\$(RootNamespace)_$(Platform).xml</DocumentationFile>
+		<OutputPath>.\bin\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Label="BuildRelease" Condition="'$(Configuration)' == 'Release'">
+		<DefineConstants>TRACE;</DefineConstants>
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>embedded</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>..\..\Lib</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup Label="Included files">
+		<None Include="..\.editorconfig" Link=".editorconfig" />
+		<None Include="..\global.json" Link="global.json" />
+		<None Include="..\LICENSE.txt" Link="LICENSE.txt" CopyToOutputDirectory="Always" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+	</ItemGroup>
+
+</Project>

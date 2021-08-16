@@ -1,0 +1,97 @@
+﻿[*.cs]
+
+# File Header Template
+file_header_template=Copyright (c) Gywerd. All Rights reserved.\nCopyright (c) Haderslev Kommune. All Rights reserved.\nLicenced under Proprietary License. See License.txt
+
+# AD1000: An instance of analyzer cannot be created
+dotnet_diagnostic.AD1000.severity=none
+
+# CA0507: Post-build Code Analysis has been deprecated
+dotnet_diagnostic.CA0507.severity=none
+
+# CA1001: Types that own disposable fields should be disposable
+dotnet_diagnostic.CA1001.severity=none
+
+# CA1031: Do not catch general exception types
+dotnet_diagnostic.CA1031.severity=none
+
+# CA1052: Static holder types should be Static or NotInheritable
+dotnet_diagnostic.CA1052.severity=none
+
+# CA1056: Uri properties should not be strings
+dotnet_diagnostic.CA1056.severity=none
+
+# CA1062: Validate arguments of public methods
+dotnet_diagnostic.CA1062.severity=none
+
+# CA1303: Do not pass literals as localized parameters
+dotnet_diagnostic.CA1303.severity=none
+
+# CA1304: Specify CultureInfo
+dotnet_diagnostic.CA1304.severity=none
+
+# CA1305: Specify IFormatProvider
+dotnet_diagnostic.CA1305.severity=none
+
+# CA1307: Specify StringComparison
+dotnet_diagnostic.CA1307.severity=none
+
+# CA1416: Only supported on Windows
+dotnet_diagnostic.CA1416.severity=none
+
+# CA1707: Identifiers should not contain underscores
+dotnet_diagnostic.CA1707.severity=none
+
+# CA1720: Identifier contains type name
+dotnet_diagnostic.CA1720.severity=none
+
+# CA1819: Properties should not return arrays
+dotnet_diagnostic.CA1819.severity=none
+
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity=none
+
+# CA1824: Mark assemblies with NeutralResourcesLanguageAttribute
+dotnet_diagnostic.CA1824.severity=none
+
+# CA2007: Consider calling ConfigureAwait on the awaited task
+dotnet_diagnostic.CA2007.severity=none
+
+# CA2100: Review SQL queries for security vulnerabilities
+dotnet_diagnostic.CA2100.severity=none
+
+# CA2211: Non-constant fields should not be visible
+dotnet_diagnostic.CA2211.severity=none
+
+# CA2227: Collection properties should be read only
+dotnet_diagnostic.CA2227.severity=none
+
+# CA2234: Pass system uri objects instead of strings
+dotnet_diagnostic.CA2234.severity=none
+
+# CA2235: Mark all non-serializable fields
+dotnet_diagnostic.CA2235.severity=none
+
+# CA3075: Insecure DTD processing in XML
+dotnet_diagnostic.CA3075.severity=none
+
+# CA5359: Do Not Disable Certificate Validation
+dotnet_diagnostic.CA5359.severity=none
+
+# CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+dotnet_diagnostic.CS8632.severity=none
+
+# IDE0044: Add readonly modifier
+dotnet_diagnostic.IDE0044.severity=none
+
+# IDE0051: Remove unused private members
+dotnet_diagnostic.IDE0051.severity=none
+
+# IDE0059: Remove unused private members
+dotnet_diagnostic.IDE0059.severity=none
+
+# IDE0063: Use simple 'using' statement
+dotnet_diagnostic.IDE0063.severity=none
+
+# IDE0052: Remove unread private members
+dotnet_diagnostic.IDE0052.severity=none

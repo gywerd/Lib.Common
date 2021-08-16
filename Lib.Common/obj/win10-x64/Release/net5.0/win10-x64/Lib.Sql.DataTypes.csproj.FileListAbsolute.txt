@@ -1,0 +1,10 @@
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib\net5.0\win10-x64\LICENSE.txt
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib\net5.0\win10-x64\Lib.Sql.DataTypes_1.0.0.1_win10-x64.deps.json
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib\net5.0\win10-x64\Lib.Sql.DataTypes_1.0.0.1_win10-x64.dll
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib\net5.0\win10-x64\ref\Lib.Sql.DataTypes_1.0.0.1_win10-x64.dll
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib.Sql1\Lib.Sql.DataTypes\obj\win10-x64\Release\net5.0\win10-x64\Lib.Sql.DataTypes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib.Sql1\Lib.Sql.DataTypes\obj\win10-x64\Release\net5.0\win10-x64\Lib.Sql.DataTypes.AssemblyInfoInputs.cache
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib.Sql1\Lib.Sql.DataTypes\obj\win10-x64\Release\net5.0\win10-x64\Lib.Sql.DataTypes.AssemblyInfo.cs
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib.Sql1\Lib.Sql.DataTypes\obj\win10-x64\Release\net5.0\win10-x64\Lib.Sql.DataTypes.csproj.CoreCompileInputs.cache
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib.Sql1\Lib.Sql.DataTypes\obj\win10-x64\Release\net5.0\win10-x64\Lib.Sql.DataTypes_1.0.0.1_win10-x64.dll
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\Lib.Sql1\Lib.Sql.DataTypes\obj\win10-x64\Release\net5.0\win10-x64\ref\Lib.Sql.DataTypes_1.0.0.1_win10-x64.dll
