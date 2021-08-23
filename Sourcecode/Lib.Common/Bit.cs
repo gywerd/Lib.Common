@@ -18,15 +18,15 @@ namespace Lib.Common.DataTypes
 
 		/// <remarks />
 		/// <param name="i">0 or 1</param>
-		private Bit(int i) => this.value=Convert.ToInt32(Convert.ToBoolean(i));
+		public Bit(int i) => this.value=Convert.ToInt32(Convert.ToBoolean(i));
 
 		/// <remarks />
 		/// <param name="s">'true' or 'false'</param>
-		private Bit(string s) => this.value=Convert.ToInt32(Convert.ToBoolean(s));
+		public Bit(string s) => this.value=Convert.ToInt32(Convert.ToBoolean(s));
 
 		/// <remarks />
 		/// <param name="bit" />
-		private Bit(bool bit) => this.value=Convert.ToInt32(bit);
+		public Bit(bool bit) => this.value=Convert.ToInt32(bit);
 
 		#endregion
 
