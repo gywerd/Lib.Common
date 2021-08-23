@@ -12,37 +12,33 @@
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.#ctor(System.Int32)">
             <remarks />
-            <param name="bit">0 or 1</param>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
+            <param name="i">0 or 1</param>
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.#ctor(System.String)">
             <remarks />
-            <param name="bit">'true' or 'false'</param>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+            <param name="s">'true' or 'false'</param>
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.#ctor(System.Boolean)">
             <remarks />
             <param name="bit" />
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(System.Int32)~Lib.Common.DataTypes.Bit">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Bit"/> using data from an <see cref="T:System.Int32"/></summary>
-            <param name="bit">An integer within the range of [0;1]</param>
+            <returns><paramref name="i"/> as Bit</returns>
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(System.String)~Lib.Common.DataTypes.Bit">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Bit"/> using data from a <see cref="T:System.String"/></summary>
+            <returns><paramref name="s"/> as Bit</returns>
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(System.Boolean)~Lib.Common.DataTypes.Bit">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Bit"/> using data from a <see cref="T:System.String"/></summary>
+            <returns><paramref name="b"/> as Bit</returns>
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(Lib.Common.DataTypes.Bit)~System.Int32">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Bit"/> as a <see cref="T:System.Int32"/></returns>
+            <returns><paramref name="bit"/> as integer</returns>
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(Lib.Common.DataTypes.Bit)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Bit"/> as a <see cref="T:System.String"/></returns>
+            <returns><paramref name="bit"/> as a string</returns>
         </member>
         <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(Lib.Common.DataTypes.Bit)~System.Boolean">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Bit"/> as a <see cref="T:System.String"/></returns>
+            <returns><paramref name="bit"/> as a bool</returns>
         </member>
         <member name="P:Lib.Common.DataTypes.Bit.Value">
             <remarks />

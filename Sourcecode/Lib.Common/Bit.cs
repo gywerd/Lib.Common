@@ -8,7 +8,7 @@ namespace Lib.Common.DataTypes
 	public class Bit : IFormattable
 	{
 		#region Fields
-		private byte value;
+		private int value;
 
 		#endregion
 
@@ -17,74 +17,50 @@ namespace Lib.Common.DataTypes
 		public Bit() { value=0; }
 
 		/// <remarks />
-		/// <param name="bit">0 or 1</param>
-		/// <exception cref="ArgumentInvalidException" />
-		private Bit(int bit)
-		{
-			if (bit<0||bit>1) throw new ArgumentInvalidException(nameof(bit), bit, nameof(bit)+Error.InvBit);
-
-			this.value=(byte)bit;
-
-		}
+		/// <param name="i">0 or 1</param>
+		private Bit(int i) => this.value=Convert.ToInt32(Convert.ToBoolean(i));
 
 		/// <remarks />
-		/// <param name="bit">'true' or 'false'</param>
-		/// <exception cref="ArgumentInvalidException" />
-		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
-		private Bit(string bit)
-		{
-			if (!string.IsNullOrWhiteSpace(bit)) throw new ArgumentNullOrWhiteSpaceException(nameof(bit), bit, nameof(bit)+Error.CantBeNullWhSp);
-			if (!bit.ToLower().Equals("true")&&!bit.ToLower().Equals("false")) throw new ArgumentInvalidException(nameof(bit), bit, Error.InvBit);
-
-			if (bit.ToLower().Equals("true")) this.value=1;
-			else this.value=0;
-
-		}
+		/// <param name="s">'true' or 'false'</param>
+		private Bit(string s) => this.value=Convert.ToInt32(Convert.ToBoolean(s));
 
 		/// <remarks />
 		/// <param name="bit" />
-		private Bit(bool bit) => this.value=Convert.ToByte(bit);
+		private Bit(bool bit) => this.value=Convert.ToInt32(bit);
 
 		#endregion
 
 		#region Operators
 
-		/// <summary>Sets <see cref="Bit"/> using data from an <see cref="int"/></summary>
-		/// <param name="bit">An integer within the range of [0;1]</param>
-		public static implicit operator Bit(int bit) => new Bit(bit);
+		/// <returns><paramref name="i"/> as Bit</returns>
+		public static implicit operator Bit(int i) => new Bit(i);
 
-		/// <summary>Sets <see cref="Bit"/> using data from a <see cref="string"/></summary>
-		public static implicit operator Bit(string bit) => new Bit(bit);
+		/// <returns><paramref name="s"/> as Bit</returns>
+		public static implicit operator Bit(string s) => new Bit(s);
 
-		/// <summary>Sets <see cref="Bit"/> using data from a <see cref="string"/></summary>
-		public static implicit operator Bit(bool bit) => new Bit(bit);
+		/// <returns><paramref name="b"/> as Bit</returns>
+		public static implicit operator Bit(bool b) => new Bit(b);
 
-		/// <returns>Value of <see cref="Bit"/> as a <see cref="int"/></returns>
+		/// <returns><paramref name="bit"/> as integer</returns>
 		public static implicit operator int(Bit bit) => bit.ToInt32();
 
-		/// <returns> Value of <see cref="Bit"/> as a <see cref="string"/></returns>
+		/// <returns><paramref name="bit"/> as a string</returns>
 		public static implicit operator string(Bit bit) => bit.ToString();
 
-		/// <returns> Value of <see cref="Bit"/> as a <see cref="string"/></returns>
+		/// <returns><paramref name="bit"/> as a bool</returns>
 		public static implicit operator bool(Bit bit) => bit.ToBoolean();
 
 		#endregion
 
 		#region Properties
 		/// <remarks />
-		public int Value { get => value; set => this.value = (byte)value; }
+		public int Value { get => value; set => this.value = Convert.ToInt32(Convert.ToBoolean(value)); }
 
 		#endregion
 
 		#region Methods
 		/// <returns>This <see cref="Bit"/> as an <see cref="bool"/></returns>
-		public bool ToBoolean()
-		{
-			if (this==null) throw new NullReferenceException();
-
-			return Convert.ToBoolean(value);
-
-		}
+		public bool ToBoolean() => Convert.ToBoolean(value);
 
 		/// <returns>This <see cref="Bit"/> as an <see cref="int"/></returns>
 		public int ToInt32() => value;
