@@ -7,7 +7,7 @@ namespace Lib.Common.DataTypes
 {
 
 	/// <Summary>DataType</Summary>
-	public class Date : IFormattable
+	public class Date : IFormattable,IComparable, IComparable<Date>, IComparable<string>
 	{
 		#region Fields
 		private const int daysPerOrdinaryYear = 365, daysPerLeapYear = 366, februaryLeapYear = 29;
@@ -24,32 +24,7 @@ namespace Lib.Common.DataTypes
 		#region Constructors
 
 		/// <remarks />
-		public Date() { this.year="2010"; this.month="01"; this.day="01"; CheckValidDate(); }
-
-		/// <remarks />
-		/// <exception cref="ArgumentNullException" />
-		public Date(Date date)
-		{
-			if (date==null) throw new ArgumentNullException(nameof(date),nameof(date)+Error.CantBeNull);
-
-			this.day=date.day;
-			this.month=date.month;
-			this.year=date.year;
-
-			CheckValidDate();
-
-		}
-
-		/// <remarks />
-		public Date(DateTime dateTime)
-		{
-			this.day=dateTime.Day.ToString();
-			this.month=dateTime.Month.ToString();
-			this.year=dateTime.Year.ToString();
-
-			CheckValidDate();
-
-		}
+		public Date() { this.year="2010"; this.month="01"; this.day="01"; }
 
 		/// <remarks />
 		/// <exception cref="ArgumentOutOfRangeException" />
@@ -57,36 +32,14 @@ namespace Lib.Common.DataTypes
 		public Date(int year, int month, int day)
 		{
 			if (year<1900||year>9999) throw new ArgumentOutOfRangeException(nameof(year), Error.InvYear);
-			if (month<1||month>9999) throw new ArgumentOutOfRangeException(nameof(month), Error.InvMon);
-			if (day<1||year>9999) throw new ArgumentOutOfRangeException(nameof(day), Error.InvDay);
+			if (month<1||month>12) throw new ArgumentOutOfRangeException(nameof(month), Error.InvMon);
+			if (day<1||day>31) throw new ArgumentOutOfRangeException(nameof(day), Error.InvDay);
 
-			string date = year.ToString()+"-"+month.ToString()+"-"+day.ToString();
-
-			if (!IsValid(date)) throw new InvalidRefException(nameof(date), date, date+Error.InvDate);
-
-			this.year=year.ToString();
-			this.month=month.ToString();
-			this.day=day.ToString();
-
-
-			CheckValidDate();
-
-		}
-
-		/// <remarks />
-		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
-		/// <exception cref="ArgumentInvalidException" />
-		public Date(string date)
-		{
-			if (string.IsNullOrWhiteSpace(date)) throw new ArgumentNullOrWhiteSpaceException(nameof(date), date, nameof(date)+Error.CantBeNullWhSp);
-			if (!IsValid(date)) throw new ArgumentInvalidException(nameof(date), date+Error.InvDate);
-
-			DateTime dateTime = Convert.ToDateTime(date);
+			DateTime dateTime = Convert.ToDateTime(Year.ToFourCharString(year)+"-"+Month.ToTwoCharString(month)+"-"+Day.ToTwoCharString(day));
 
 			this.month=dateTime.Month.ToString();
 			this.year=dateTime.Year.ToString();
 			this.day=dateTime.Day.ToString();
-
 
 			CheckValidDate();
 
@@ -101,39 +54,57 @@ namespace Lib.Common.DataTypes
 			if (string.IsNullOrWhiteSpace(month)) throw new ArgumentNullOrWhiteSpaceException(nameof(month), month, nameof(month)+Error.CantBeNullWhSp);
 			if (string.IsNullOrWhiteSpace(day)) throw new ArgumentNullOrWhiteSpaceException(nameof(day), day, nameof(day)+Error.CantBeNullWhSp);
 			if (Convert.ToInt32(year)<1900||Convert.ToInt32(year)>9999) throw new ArgumentOutOfRangeException(nameof(year), year, Error.InvYear);
-			if (Convert.ToInt32(month)<1||Convert.ToInt32(month)>9999) throw new ArgumentOutOfRangeException(nameof(month), month, Error.InvMon);
-			if (Convert.ToInt32(day)<1||Convert.ToInt32(day)>9999) throw new ArgumentOutOfRangeException(nameof(day), day, Error.InvDay);
+			if (Convert.ToInt32(month)<1||Convert.ToInt32(month)>12) throw new ArgumentOutOfRangeException(nameof(month), month, Error.InvMon);
+			if (Convert.ToInt32(day)<1||Convert.ToInt32(day)>31) throw new ArgumentOutOfRangeException(nameof(day), day, Error.InvDay);
 
-			string tempMonth;
-			string tempDay;
+			DateTime dateTime = Convert.ToDateTime(Year.ToFourCharString(year)+"-"+Month.ToTwoCharString(month)+"-"+Day.ToTwoCharString(day));
 
-			switch (month.ToString().Length)
-			{
-				case 1:
-					tempMonth="0"+month;
-					break;
-				default:
-					tempMonth=month;
-					break;
-			}
+			this.month=dateTime.Month.ToString();
+			this.year=dateTime.Year.ToString();
+			this.day=dateTime.Day.ToString();
 
-			switch (day.ToString().Length)
-			{
-				case 1:
-					tempDay="0"+day;
-					break;
-				default:
-					tempDay=day;
-					break;
-			}
+			CheckValidDate();
 
-			string date = year.ToString()+"-"+tempMonth+"-"+tempDay;
+		}
 
-			if (!IsValid(date)) throw new InvalidRefException(nameof(date), date+Error.InvDate);
+		/// <remarks />
+		/// <exception cref="ArgumentNullException" />
+		private Date(Date date)
+		{
+			if (date==null) throw new ArgumentNullException(nameof(date),nameof(date)+Error.CantBeNull);
 
-			this.year=year;
-			this.month=tempMonth;
-			this.day=tempDay;
+			this.day=date.day;
+			this.month=date.month;
+			this.year=date.year;
+
+			CheckValidDate();
+
+		}
+
+		/// <remarks />
+		private Date(DateTime dt)
+		{
+			this.day=dt.Day.ToString();
+			this.month=dt.Month.ToString();
+			this.year=dt.Year.ToString();
+
+			CheckValidDate();
+
+		}
+
+		/// <remarks />
+		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
+		/// <exception cref="ArgumentInvalidException" />
+		private Date(string date)
+		{
+			if (string.IsNullOrWhiteSpace(date)) throw new ArgumentNullOrWhiteSpaceException(nameof(date), date, nameof(date)+Error.CantBeNullWhSp);
+			if (!IsValid(date)) throw new ArgumentInvalidException(nameof(date), date+Error.InvDate);
+
+			DateTime dateTime = Convert.ToDateTime(date);
+
+			this.month=dateTime.Month.ToString();
+			this.year=dateTime.Year.ToString();
+			this.day=dateTime.Day.ToString();
 
 			CheckValidDate();
 
@@ -143,21 +114,20 @@ namespace Lib.Common.DataTypes
 
 		#region Operators
 
+		/// <returns>Result as bool</returns>
+		public static bool operator == (Date a, Date b) => a.Equals(b);
+
+		/// <returns>Result as bool</returns>
+		public static bool operator != (Date a, Date b) => !a.Equals(b);
+
 		/// <summary>Sets <see cref="Date"/> using data from a <see cref="DateTime"/></summary>
 		/// <param name="dateTime"></param>
-		public static implicit operator Date(DateTime dateTime) => new Date(dateTime);
+		public static implicit operator Date(DateTime dateTime) => new(dateTime);
 
 		/// <summary>Sets <see cref="Date"/> using data from <see cref="DateTime"/></summary>
 		/// <param name="date">Date as <paramref name="date"/> with the format 'yyyy-MM-dd'</param>
 		/// <exception cref="ArgumentInvalidException" />
-		public static implicit operator Date(string date)
-		{
-			if (date==null) return null;
-			if (!IsValid(date)) throw new ArgumentInvalidException(nameof(date),date,nameof(date)+Error.InvDate);
-
-			return new Date(date);
-
-		}
+		public static implicit operator Date(string date) => new(date);
 
 		/// <returns>Value of <see cref="Date"/> as a <see cref="DateTime"/></returns>
 		/// <param name="date"></param>
@@ -184,9 +154,6 @@ namespace Lib.Common.DataTypes
 
 		/// <remarks />
 		public Year Year { get => this.year; }
-
-		/// <remarks />
-		public string Value { get => ToString("g"); }
 
 		#endregion
 
@@ -254,35 +221,19 @@ namespace Lib.Common.DataTypes
 
 		#region Non-Static Methods
 
+		#region Add
+
 		/// <summary>Adds number of <paramref name="days"/> to this <see cref="Date"/> (or substracts if <paramref name="days"/> is neagative)</summary>
 		/// <param name="days">Number of days to add as <see cref="int"/></param>
 		/// <exception cref="NullReferenceException" />
 		public void AddDays(int days)
 		{
 			if (this==null) throw new NullReferenceException(); // This is necessary to safe guard the class
+			DateTime dt = ((DateTime)this).AddDays(days);
 
-			CheckLeapYear();
-
-			if (days+this.day.ToInt32()>Month.RetrieveDaysPerMonth(this.month, leapYear))
-			{
-				RetrieveYearsMonthsDays(days, out int remDays, out int remMonths, out int remYears);
-
-				if (remMonths>0) AddMonths(remMonths);
-				if (remYears>0) AddYears(remYears);
-
-				this.day=day.ToInt32()+remDays;
-			}
-			else if (days+this.day.ToInt32()<0)
-			{
-				RetrieveNegYearsMonthsDays(days, out int remDays, out int remMonths, out int remYears);
-
-				if (remMonths>0) AddMonths(remMonths);
-				if (remYears>0) AddYears(remYears);
-
-				this.day=day.ToInt32()+remDays;
-
-			}
-			else this.day=day.ToInt32()+days;
+			this.day=dt.Day;
+			this.month=dt.Month;
+			this.year=dt.Year;
 
 		}
 
@@ -305,26 +256,11 @@ namespace Lib.Common.DataTypes
 		public void AddMonths(int months)
 		{
 			if (this==null) throw new NullReferenceException(); // This is necessary to safe guard the class
+			DateTime dt = ((DateTime)this).AddMonths(months);
 
-			if (this.month.ToInt32()+months>12)
-			{
-				RetrieveYearsMonths(months, out int remMonths, out int remYears);
+			this.month=dt.Month;
+			this.year=dt.Year;
 
-				if (remYears>0) AddYears(remYears);
-
-				this.month=this.month.ToInt32()+remMonths;
-
-			}
-			else if (this.month.ToInt32()+months<0)
-			{
-				RetrieveNegYearsMonths(months, out int remMonths, out int remYears);
-
-				if (remYears>0) AddYears(remYears);
-
-				this.month=this.month.ToInt32()+remMonths;
-
-			}
-			else this.month=this.month.ToInt32()+months;
 		}
 
 		/// <summary>Adds number of <paramref name="months"/> to this <see cref="Date"/> (or substracts if <paramref name="months"/> is neagative)</summary>
@@ -343,13 +279,7 @@ namespace Lib.Common.DataTypes
 		/// <summary>Adds number of <paramref name="years"/> to this <see cref="Date"/> (or substracts if <paramref name="years"/> is neagative)</summary>
 		/// <param name="years">Number of years to add as <see cref="int"/></param>
 		/// <exception cref="NullReferenceException" />
-		public void AddYears(int years)
-		{
-			if (this==null) throw new NullReferenceException(); // This is necessary to safe guard the class
-
-			this.year=this.year.ToInt32()+years;
-
-		}
+		public void AddYears(int years) =>this.year=((DateTime)this).AddYears(years).Year;
 
 		/// <summary>Adds number of <paramref name="years"/> to this <see cref="Date"/> (or substracts if <paramref name="years"/> is neagative)</summary>
 		/// <param name="years">Number of years to add as <see cref="string"/></param>
@@ -364,14 +294,18 @@ namespace Lib.Common.DataTypes
 
 		}
 
+		#endregion
+
+		#region Check
+
 		/// <summary>Checks wether <see cref="Year"/> is a leap year, and sets the <see cref="LeapYear"/> flag</summary>
 		/// <exception cref="NullReferenceException" />
 		private void CheckValidDate()
 		{
 			if (string.IsNullOrWhiteSpace(this.year)) throw new NullOrWhiteSpaceRefException(nameof(this.year), this.year, nameof(this.year)+Error.CantBeNullWhSp);
 
-			CheckLeapYear();
-			this.validDate=DateTime.TryParse(this.Value, out DateTime dt);
+			this.leapYear=Year.IsLeapYear(this.year.ToInt32());
+			this.validDate=DateTime.TryParse(ToString(), out DateTime dt);
 
 		}
 
@@ -385,6 +319,21 @@ namespace Lib.Common.DataTypes
 
 		}
 
+		#endregion
+
+		#region Compare To
+		/// <remarks />
+		public int CompareTo(Date other) => this.ToDateTime().CompareTo(other.ToDateTime());
+
+
+		/// <remarks />
+		public int CompareTo(object obj) => this.ToDateTime().CompareTo(Convert.ToDateTime(obj));
+
+		/// <remarks />
+		public int CompareTo(string other)=> this.ToDateTime().CompareTo(Convert.ToDateTime(other));
+
+		#endregion
+
 		/// <returns>Identical copy of this <see cref="Date"/></returns>
 		public Date Clone()
 		{
@@ -393,337 +342,57 @@ namespace Lib.Common.DataTypes
 			return new Date(this);
 		}
 
+		#region Equals
+
+		/// <summary>Compares this Date to <paramref name="date"/></summary>
+		/// <param name="date"></param>
+		/// <returns>Result as bool</returns>
+		public bool Equals(Date date) => ((DateTime)this).Equals(date);
+
+		/// <summary>Compares this Date to <paramref name="dt"/></summary>
+		/// <param name="dt">Month or day</param>
+		/// <returns>Result as bool</returns>
+		public bool Equals(DateTime dt) => ((DateTime)this).Equals(dt);
+
+		/// <summary>Compares this Bit to <paramref name="obj"/></summary>
+		/// <param name="obj" />
+		/// <returns>Result as bool</returns>
+		public override bool Equals(object obj) => this.Equals((Bit)obj);
+
 		/// <returns>'true' if this <see cref="Date"/> is identical to <paramref name="date"/> - else 'false'</returns>
 		/// <param name="date">Date to compare as <see cref="string"/> in format 'yyyy-DD-mm'</param>
 		/// <exception cref="NullReferenceException" />
 		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
-		public bool Equals(string date)
-		{
-			if (this==null) throw new NullReferenceException(); // This is necessary to safe guard the class
-			if (!IsValid(date)) throw new ArgumentInvalidException(nameof(date), date, date+Error.InvDate);
-			if (date==null) return false;
+		public bool Equals(string date) =>  ((DateTime)this).Equals(Convert.ToDateTime(date));
 
-			return this.Value.Equals(date);
+		#endregion
 
-		}
-
-		/// <returns>'true' if this <see cref="Date"/> is identical to <paramref name="date"/> - else 'false'</returns>
-		/// <param name="date"></param>
-		/// <exception cref="NullReferenceException" />
-		public bool Equals(Date date)
-		{
-			if (this==null) throw new NullReferenceException();  //this is necessary to guard against reverse-pinvokes andother callers who do not use the callvirt instruction
-			if (date==null) return false;
-			if (ReferenceEquals(this, date)) return true;
-
-			return Equals(date.Value);
-
-		}
-
-		/// <returns>'true' if this <see cref="Date"/> is identical to <paramref name="dateTime"/>.Date - else 'false'</returns>
-		/// <param name="dateTime">Month or day</param>
-		public bool Equals(DateTime dateTime)
-		{
-			if (this==null) throw new NullReferenceException();  //this is necessary to guard against reverse-pinvokes andother callers who do not use the callvirt instruction
-
-			return Equals(dateTime.ToString("yyyy-MM-dd"));
-
-		}
+		/// <remarks />
+		public override int GetHashCode() => ToString().GetHashCode();
 
 		/// <returns>'true' if this <see cref="Date"/> is equal to '2010-01-01' - else 'false'</returns>
 		public bool IsEmpty()
 		{
 			if (this==null) throw new NullReferenceException();
-			if (!this.year.Equals("2010")) return false;
-			if (!this.month.Equals("01")||!this.day.Equals("01")) return false;
-
-			return true;
-
+			else if (!this.year.Equals("2010")) return false;
+			else if (!this.month.Equals("01")||!this.day.Equals("01")) return false;
+			else return true;
 		}
 
-		/// <remarks />
-		private void RetrieveNegYearsMonths(int months, out int remMonths, out int remYears)
-		{
-			remMonths=0;
-			remYears=0;
-
-			bool cont = false;
-
-			if (months<0-this.month.ToInt32())
-			{
-				int tempMonths = months+12;
-				int tempYears = -1;
-
-				if (tempMonths<-12)
-				{
-					cont=true;
-
-					while (cont)
-					{
-						tempMonths+=12;
-						tempYears-=1;
-
-						if (tempMonths>-12) cont=false;
-
-					}
-
-					remYears=tempYears;
-					remMonths=tempMonths;
-				}
-				else if (tempMonths.Equals(-12))
-				{
-					remYears=tempYears-1;
-					remMonths-=this.month.ToInt32();
-				}
-				else
-				{
-					remYears=tempYears;
-					remMonths=tempMonths;
-				}
-
-			}
-			else if (months.Equals(0-this.month.ToInt32()))
-			{
-				remYears-=1;
-				remMonths=13-this.month.ToInt32();
-			}
-			else remMonths=months;
-
-		}
-
-		/// <remarks />
-		private void RetrieveNegYearsMonths(string months, out int remMonths, out int remYears) => RetrieveNegYearsMonths(Convert.ToInt32(months), out remMonths, out remYears);
-
-		private void RetrieveNegYearsMonthsDays(int days, out int remDays, out int remMonths, out int remYears)
-		{
-			CheckLeapYear();
-
-			remDays=0;
-			remMonths=0;
-			remYears=0;
-			// OBS Org Month!!!!!!!!!!!!!!!!!!
-			bool cont = false;
-
-			if (days<0-this.day.ToInt32())
-			{
-				int tempDays = days+60;
-				int tempMonths = -1;
-
-				int currentYear = this.year.ToInt32();
-				int currentMonth = this.month.ToInt32()-1;
-
-				if (currentMonth<1)
-				{
-					currentMonth=currentMonth+12;
-					currentYear-=1;
-				}
-
-				int daysCurentMonth = Month.RetrieveDaysPerMonth(currentMonth, Year.IsLeapYear(currentYear));
-
-				if (tempDays>0-daysCurentMonth)
-				{
-					cont=true;
-
-					while (cont)
-					{
-						tempDays+=daysCurentMonth;
-						currentMonth-=1;
-
-						if (currentMonth<1)
-						{
-							currentMonth=currentMonth+12;
-							currentYear-=1;
-						}
-
-						daysCurentMonth=Month.RetrieveDaysPerMonth(currentMonth, Year.IsLeapYear(currentYear));
-						tempMonths-=1;
-
-						if (tempDays>0-daysCurentMonth) cont=false;
-
-					}
-
-					if (tempMonths>12)
-					{
-						RetrieveNegYearsMonths(tempMonths, out remMonths, out remYears);
-						remDays=tempDays;
-					}
-					else if (tempMonths.Equals(12))
-					{
-						remYears-=1;
-						remDays=tempDays;
-					}
-					else
-					{
-						remMonths=tempMonths;
-						remDays=tempDays;
-					}
-
-
-				}
-				else if (tempDays==0-daysCurentMonth) remMonths=tempMonths-1;
-				else
-				{
-					remMonths=tempMonths;
-					remDays=tempDays;
-				}
-
-			}
-			else if (days.Equals(0-this.day.ToInt32())) remMonths-=1;
-			else remDays=days;
-
-		}
-
-		/// <remarks />
-		private void RetrieveNegYearsMonthsDays(string days, out int remDays, out int remMonths, out int remYears) => RetrieveNegYearsMonthsDays(Convert.ToInt32(days), out remDays, out remMonths, out remYears);
-
-		private void RetrieveYearsMonths(int months, out int remMonths, out int remYears)
-		{
-			remMonths=0;
-			remYears=0;
-
-			bool cont = false;
-
-			if (months>12-this.month.ToInt32())
-			{
-				int tempMonths = months-12;
-				int tempYears = 1;
-
-				if (tempMonths>12)
-				{
-					cont=true;
-
-					while (cont)
-					{
-						tempMonths-=12;
-						tempYears+=1;
-
-						if (tempMonths>12)
-							cont=false;
-
-					}
-
-					remYears=tempYears;
-					remMonths=tempMonths;
-				}
-				else if (tempMonths.Equals(12)) remYears=tempYears+1;
-				else
-				{
-					remYears=tempYears;
-					remMonths=tempMonths;
-				}
-
-			}
-			else if (months.Equals(12-this.month.ToInt32())) remYears+=1;
-			else remMonths=months;
-		}
-
-		/// <remarks />
-		private void RetrieveYearsMonths(string months, out int remMonths, out int remYears) => RetrieveYearsMonths(Convert.ToInt32(months), out remMonths, out remYears);
-
-
-		private void RetrieveYearsMonthsDays(int days, out int remDays, out int remMonths, out int remYears)
-		{
-			CheckLeapYear();
-
-			remDays=0;
-			remMonths=0;
-			remYears=0;
-			int daysOrgMonth = Month.RetrieveDaysPerMonth(this.month, leapYear);
-
-			bool cont = false;
-
-			if (days>daysOrgMonth-this.day.ToInt32())
-			{
-				int tempDays = days-daysOrgMonth+this.day.ToInt32();
-				int tempMonths = 1;
-
-				int currentYear = this.year.ToInt32();
-				int currentMonth = this.month.ToInt32()+1;
-
-				if (currentMonth>12)
-				{
-					currentMonth=currentMonth-12;
-					currentYear+=1;
-				}
-
-				int daysCurentMonth = Month.RetrieveDaysPerMonth(currentMonth, Year.IsLeapYear(currentYear));
-
-				if (tempDays>daysCurentMonth)
-				{
-					cont=true;
-
-					while (cont)
-					{
-						tempDays-=daysCurentMonth;
-						currentMonth+=1;
-
-						if (currentMonth>12)
-						{
-							currentMonth=currentMonth-12;
-							currentYear+=1;
-						}
-
-						daysCurentMonth=Month.RetrieveDaysPerMonth(currentMonth, Year.IsLeapYear(currentYear));
-						tempMonths+=1;
-
-						if (tempDays<daysCurentMonth) cont=false;
-
-					}
-
-					if (tempMonths>12)
-					{
-						RetrieveYearsMonths(tempMonths, out remMonths, out remYears);
-						remDays=tempDays;
-					}
-					else if (tempMonths.Equals(12))
-					{
-						remYears=1;
-						remDays=tempDays;
-					}
-					else
-					{
-						remMonths=tempMonths;
-						remDays=tempDays;
-					}
-
-
-				}
-				else if (tempDays==daysCurentMonth) remMonths=tempMonths+1;
-				else
-				{
-					remMonths=tempMonths;
-					remDays=tempDays;
-				}
-
-			}
-			else if (days==daysOrgMonth-this.day.ToInt32()) remMonths+=1;
-			else remDays=days;
-
-		}
-
-		/// <remarks />
-		private void RetrieveYearsMonthsDays(string days, out int remDays, out int remMonths, out int remYears) => RetrieveYearsMonthsDays(Convert.ToInt32(days), out remDays, out remMonths, out remYears);
-
-		/// <returns>This <see cref="Date"/> as <see cref="DateTime"/></returns>
+		#region To something 
+		/// <returns>This Date as <see cref="DateTime"/></returns>
 		/// <exception cref="NullReferenceException" />
 		/// <exception cref="NullOrWhiteSpaceRefException" />
-		public DateTime ToDateTime()
-		{
-			if (this==null) throw new NullReferenceException();
-			if (this.Value==null) throw new NullOrWhiteSpaceRefException(nameof(this.Value), this.Value, nameof(this.Value)+Error.CantBeNullWhSp);
-
-			return Convert.ToDateTime(this.Value);
-
-		}
+		public DateTime ToDateTime() => Convert.ToDateTime(ToString());
 
 		/// <returns>This <see cref="Date"/> as <see cref="string"/></returns>
 		public override string ToString() => ToString("g", CultureInfo.CurrentCulture);
 
-		/// <returns>This <see cref="Date"/> as <see cref="string"/> with requested <paramref name="format"/></returns>
+		/// <returns>This Date as string with requested <paramref name="format"/></returns>
 		/// <param name="format">Date format as a <see cref="string"/> - e.g. 'd", 'D', and 'g'</param>
 		public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
 
-		/// <returns>This <see cref="Date"/> as <see cref="string"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
+		/// <returns>This Date as string with requested <paramref name="format"/> and <paramref name="provider"/></returns>
 		/// <param name="format">Date format as a <see cref="string"/> - e.g. 'd", 'D', and 'g'</param>
 		/// <param name="provider">Format provider as a <see cref="string"/> - e.g. 'da-DK' for danish</param>
 		public string ToString(string format, IFormatProvider provider)
@@ -732,22 +401,23 @@ namespace Lib.Common.DataTypes
 			if (string.IsNullOrEmpty(format)) format="g";
 			if (provider==null) provider=CultureInfo.CurrentCulture;
 
-			switch (format)
+			return format switch
 			{
-				case "d": return Convert.ToDateTime(this.Value).ToString("d",provider);
-				case "D": return Convert.ToDateTime(this.Value).ToString("D",provider);
-				case "g": return Convert.ToDateTime(this.Value).ToString("yyyy-MM-dd");
-				default: throw new FormatException(string.Format("The {0} format string is not supported.", format));
-			}
-
+				"d" => ((DateTime)this).ToString("d", provider),
+				"D" => ((DateTime)this).ToString("D", provider),
+				"g" => ((DateTime)this).ToString("yyyy-MM-dd"),
+				_ => throw new FormatException(string.Format("The {0} format string is not supported.", format)),
+			};
 		}
+
+		#endregion
 
 		#endregion
 
 	}
 
 	/// <Summary>DataType</Summary>
-	public class Day : IFormattable
+	public class Day : IFormattable, IComparable, IComparable<Day>, IComparable<int>, IComparable<string>
 	{
 		#region Fields
 		private string value;
@@ -760,7 +430,7 @@ namespace Lib.Common.DataTypes
 
 		/// <remarks />
 		/// <exception cref="ArgumentInvalidException" />
-		private Day(int day)
+		public Day(int day)
 		{
 			if (day<1||day>31) throw new ArgumentInvalidException(nameof(day), day, Error.InvDay);
 
@@ -771,7 +441,7 @@ namespace Lib.Common.DataTypes
 		/// <remarks />
 		/// <exception cref="ArgumentInvalidException" />
 		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
-		private Day(string day)
+		public Day(string day)
 		{
 			if (!string.IsNullOrWhiteSpace(day)) throw new ArgumentNullOrWhiteSpaceException(nameof(day), day, nameof(day)+Error.CantBeNullWhSp);
 			if (Convert.ToInt32(day)<1||Convert.ToInt32(day)>31) throw new ArgumentInvalidException(nameof(day), day, Error.InvDay);
@@ -784,51 +454,74 @@ namespace Lib.Common.DataTypes
 
 		#region Operators
 
-		/// <summary>Sets <see cref="Day"/> using data from an <see cref="int"/></summary>
-		/// <param name="day">An within the range of [1;31]</param>
-		/// <exception cref="ArgumentInvalidException" />
-		public static implicit operator Day(int day) => new Day(day);
+		/// <returns>Result as bool</returns>
+		public static bool operator == (Day a, Day b) => a.Equals(b);
 
-		/// <summary>Sets <see cref="Day"/> using data from a <see cref="string"/></summary>
-		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
-		public static implicit operator Day(string day) => new Day(day);
+		/// <returns>Result as bool</returns>
+		public static bool operator != (Day a, Day b) => !a.Equals(b);
 
-		/// <returns>Value of <see cref="Day"/> as a <see cref="int"/></returns>
+		/// <returns><paramref name="i"/> as Day</returns>
+		/// <param name="i">Integer within the range of [1;31]</param>
+		public static implicit operator Day(int i) => new(i);
+
+		/// <returns><paramref name="i"/> as Day</returns>
+		/// <param name="i">Integer within the range of [1;31]</param>
+		public static implicit operator Day(string s) => new(s);
+
+		/// <returns><paramref name="day"/> as int</returns>
+		/// <param name="day" />
 		public static implicit operator int(Day day) => day.ToInt32();
 
-		/// <returns> Value of <see cref="Day"/> as a <see cref="string"/></returns>
-		public static implicit operator string(Day day) => day.ToString();
+		/// <returns><paramref name="day"/> as a string</returns>
+		/// <param name="day" />
+		public static implicit operator string(Day day) => day.value;
 
-		#endregion
-
-		#region Properties
-		/// <remarks />
-		public string Value { get => value; set => value=ToTwoCharString(value); }
 		#endregion
 
 		#region Methods
+
+		#region Compare To
+
+		/// <remarks />
+		public int CompareTo(Day other) => this.ToInt32().CompareTo(other.ToInt32());
+
+		/// <remarks />
+		public int CompareTo(int other) => this.ToInt32().CompareTo(other);
+
+		/// <remarks />
+		public int CompareTo(object obj) => this.CompareTo((Day)obj);
+
+		/// <remarks />
+		public int CompareTo(string other)=> this.ToInt32().CompareTo(Convert.ToInt32(other));
+
+		#endregion
+
+		/// <summary>Compares this Day to <paramref name="obj"/></summary>
+		/// <param name="obj" />
+		/// <returns>Result as bool</returns>
+		public override bool Equals(object obj) => this.value.Equals(ToTwoCharString(obj.ToString()));
+
+		/// <remarks />
+		public override int GetHashCode() => this.value.GetHashCode();
+
+		#region To something
 		/// <returns><paramref name="day"/> converted two character <see cref="string"/></returns>
 		/// <exception cref="NullOrWhiteSpaceRefException" />
 		public static string ToTwoCharString(string day)
 		{
 			if (string.IsNullOrWhiteSpace(day)) throw new NullOrWhiteSpaceRefException(nameof(day), day, nameof(day)+Error.CantBeNullWhSp);
 
-			switch (day.Length)
+			return day.Length switch
 			{
-				case<=0:
-					return "00";
-				case 1:
-					return "0"+day;
-				case 2:
-					return day;
-				default:
-					return day.Remove(0, day.Length-2);
-			}
-
+				<=0 => "00",
+				1 => "0"+day,
+				2 => day,
+				_ => day.Remove(0, day.Length-2),
+			};
 		}
 
 		/// <returns><paramref name="day"/> converted into a two character string</returns>
-		protected static string ToTwoCharString(int day) => ToTwoCharString(Convert.ToString(day));
+		public static string ToTwoCharString(int day) => ToTwoCharString(Convert.ToString(day));
 
 		/// <returns>This <see cref="Day"/> as an <see cref="int"/></returns>
 		public int ToInt32() => Convert.ToInt32(value);
@@ -845,19 +538,19 @@ namespace Lib.Common.DataTypes
 		/// <param name="provider">Format provider as a <see cref="string"/> - e.g. 'da-DK' for danish</param>
 		public string ToString(string format, IFormatProvider provider)
 		{
-			if (this==null)
-				return "null";
+			if (this==null) return "null";
 			if (string.IsNullOrEmpty(format)) format="G";
 			if (provider==null) provider=CultureInfo.CurrentCulture;
 
-			switch (format)
+			return format switch
 			{
-				case "g": return Convert.ToInt32(this.Value).ToString();
-				case "G": return ToTwoCharString(this.value);
-				default: throw new FormatException(string.Format("The {0} format string is not supported.", format));
-			}
-
+				"g" => Convert.ToInt32(this.value).ToString(),
+				"G" => ToTwoCharString(this.value),
+				_ => throw new FormatException(string.Format("The {0} format string is not supported.", format)),
+			};
 		}
+
+		#endregion
 
 		#endregion
 
@@ -904,49 +597,71 @@ namespace Lib.Common.DataTypes
 
 		#region Operators
 
+		/// <returns>Result as bool</returns>
+		public static bool operator == (Month a, Month b) => a.value.Equals(b.value);
+
+		/// <returns>Result as bool</returns>
+		public static bool operator != (Month a, Month b) => !a.value.Equals(b.value);
+
 		/// <summary>Sets <see cref="Month"/> using data from an <see cref="int"/></summary>
-		public static implicit operator Month(int month) => new Month(month);
+		public static implicit operator Month(int month) => new(month);
 
 		/// <summary>Sets <see cref="Month"/> using data from a <see cref="string"/></summary>
-		public static implicit operator Month(string month) => new Month(month);
+		public static implicit operator Month(string month) => new(month);
 
 		/// <returns>Value of <see cref="Month"/> as a <see cref="int"/></returns>
-		public static implicit operator int(Month day) => day.ToInt32();
+		public static implicit operator int(Month month) => month.ToInt32();
 
 		/// <returns> Value of <see cref="Month"/> as a <see cref="string"/></returns>
-		public static implicit operator string(Month day) => day.ToString();
-
-		#endregion
-
-		#region Properties
-		/// <remarks />
-		public string Value { get => value; set => value=ToTwoCharString(value); }
+		public static implicit operator string(Month month) => month.value;
 
 		#endregion
 
 		#region Methods
+
+		#region Compare To
+
+		/// <remarks />
+		public int CompareTo(Day other) => this.ToInt32().CompareTo(other.ToInt32());
+
+		/// <remarks />
+		public int CompareTo(int other) => this.ToInt32().CompareTo(other);
+
+		/// <remarks />
+		public int CompareTo(object obj) => this.CompareTo((Day)obj);
+
+		/// <remarks />
+		public int CompareTo(string other)=> this.ToInt32().CompareTo(Convert.ToInt32(other));
+
+		#endregion
+
+		/// <summary>Compares this Month to <paramref name="obj"/></summary>
+		/// <param name="obj" />
+		/// <returns>Result as bool</returns>
+		public override bool Equals(object obj) => this.value.Equals(obj.ToString());
+
+		/// <remarks />
+		public override int GetHashCode() => this.value.GetHashCode();
+
+		#region To something
+
 		/// <returns><paramref name="month"/> converted two character <see cref="string"/></returns>
 		/// <exception cref="NullOrWhiteSpaceRefException" />
-		private static string ToTwoCharString(string month)
+		public static string ToTwoCharString(string month)
 		{
 			if (string.IsNullOrWhiteSpace(month)) throw new NullOrWhiteSpaceRefException(nameof(month), month, nameof(month)+Error.CantBeNullWhSp);
 
-			switch (month.Length)
+			return month.Length switch
 			{
-				case<=0:
-					return "00";
-				case 1:
-					return "0"+month;
-				case 2:
-					return month;
-				default:
-					return month.Remove(0, month.Length-2);
-			}
-
+				<=0 => "00",
+				1 => "0"+month,
+				2 => month,
+				_ => month.Remove(0, month.Length-2),
+			};
 		}
 
 		/// <returns><paramref name="month"/> converted into a two character string</returns>
-		protected static string ToTwoCharString(int month) => ToTwoCharString(Convert.ToString(month));
+		public static string ToTwoCharString(int month) => ToTwoCharString(Convert.ToString(month));
 
 		/// <returns>This <see cref="Month"/> as an <see cref="int"/></returns>
 		public int ToInt32() => Convert.ToInt32(this.value);
@@ -967,13 +682,12 @@ namespace Lib.Common.DataTypes
 			if (string.IsNullOrEmpty(format)) format="G";
 			if (provider==null) provider=CultureInfo.CurrentCulture;
 
-			switch (format)
+			return format switch
 			{
-				case "g": return Convert.ToInt32(this.Value).ToString();
-				case "G": return ToTwoCharString(this.value);
-				default: throw new FormatException(string.Format("The {0} format string is not supported.", format));
-			}
-
+				"g" => Convert.ToInt32(this.value).ToString(),
+				"G" => ToTwoCharString(this.value),
+				_ => throw new FormatException(string.Format("The {0} format string is not supported.", format)),
+			};
 		}
 
 		/// <returns>days per month as <see cref="int"/></returns>
@@ -995,6 +709,8 @@ namespace Lib.Common.DataTypes
 			return monthNames[month];
 
 		}
+
+		#endregion
 
 		#endregion
 
@@ -1039,17 +755,23 @@ namespace Lib.Common.DataTypes
 
 		#region Operators
 
-		/// <summary>Sets <see cref="Year"/> using data from an <see cref="int"/></summary>
-		public static implicit operator Year(int month) => new Year(month);
+		/// <returns>Result as bool</returns>
+		public static bool operator == (Year a, Year b) => a.Value.Equals(b.Value);
 
-		/// <summary>Sets <see cref="Year"/> using data from a <see cref="string"/></summary>
-		public static implicit operator Year(string month) => new Year(month);
+		/// <returns>Result as bool</returns>
+		public static bool operator != (Year a, Year b) => !a.Value.Equals(b.Value);
 
-		/// <returns>Value of <see cref="Year"/> as a <see cref="int"/></returns>
-		public static implicit operator int(Year day) => day.ToInt32();
+		/// <returns><paramref name="i"/> as Year</returns>
+		public static implicit operator Year(int i) => new(i);
 
-		/// <returns> Value of <see cref="Year"/> as a <see cref="string"/></returns>
-		public static implicit operator string(Year day) => day.ToString();
+		/// <returns><paramref name="s"/> as Year</returns>
+		public static implicit operator Year(string s) => new(s);
+
+		/// <returns><paramref name="year"/>  as int</returns>
+		public static implicit operator int(Year year) => year.ToInt32();
+
+		/// <returns><paramref name="year"/> as string</returns>
+		public static implicit operator string(Year year) => year.ToString();
 
 		#endregion
 
@@ -1060,6 +782,16 @@ namespace Lib.Common.DataTypes
 		#endregion
 
 		#region Methods
+
+		/// <summary>Compares this Year to <paramref name="obj"/></summary>
+		/// <param name="obj" />
+		/// <returns>Result as bool</returns>
+		public override bool Equals(object obj) => this.Value.Equals(obj.ToString());
+
+		/// <remarks />
+		public override int GetHashCode() => Value.GetHashCode();
+
+		#region Is something
 		/// <returns>'true' if <paramref name="year"/> is a leap year - else 'false'</returns>
 		/// <param name="year">Four digit integer within the range [1900;9999]</param>
 		/// <exception cref="ArgumentOutOfRangeException" />
@@ -1099,9 +831,22 @@ namespace Lib.Common.DataTypes
 
 		}
 
+		#endregion
+
+		#region To something
+
+		/// <returns><paramref name="year"/> converted into four character <see cref="string"/></returns>
+		public static string ToFourCharString(string year)
+		{
+			if (string.IsNullOrWhiteSpace(year)) throw new NullOrWhiteSpaceRefException(nameof(year), year, nameof(year)+Error.CantBeNullWhSp);
+
+			return ToFourCharString(Convert.ToInt32(year));
+
+		}
+
 		/// <returns><paramref name="year"/> converted into a two character string</returns>
 		/// <exception cref="ArgumentInvalidException" />
-		private static string ToFourCharString(int year)
+		public static string ToFourCharString(int year)
 		{
 			if (year<0) throw new ArgumentInvalidException(nameof(year), year, nameof(year)+Error.InvYear);
 
@@ -1115,15 +860,6 @@ namespace Lib.Common.DataTypes
 				case 4: return year.ToString();
 				default: return year.ToString().Remove(0, year.ToString().Length-4);
 			}
-		}
-
-		/// <returns><paramref name="year"/> converted into four character <see cref="string"/></returns>
-		private static string ToFourCharString(string year)
-		{
-			if (string.IsNullOrWhiteSpace(year)) throw new NullOrWhiteSpaceRefException(nameof(year), year, nameof(year)+Error.CantBeNullWhSp);
-
-			return ToFourCharString(Convert.ToInt32(year));
-
 		}
 
 		/// <returns>This <see cref="Year"/> as an <see cref="int"/></returns>
@@ -1146,14 +882,15 @@ namespace Lib.Common.DataTypes
 			if (string.IsNullOrEmpty(format)) format="G";
 			if (provider==null) provider=CultureInfo.CurrentCulture;
 
-			switch (format)
+			return format switch
 			{
-				case "g": return Convert.ToInt32(this.Value).ToString();
-				case "G": return ToFourCharString(this.value);
-				default: throw new FormatException(string.Format("The {0} format string is not supported.", format));
-			}
-
+				"g" => Convert.ToInt32(this.Value).ToString(),
+				"G" => ToFourCharString(this.value),
+				_ => throw new FormatException(string.Format("The {0} format string is not supported.", format)),
+			};
 		}
+
+		#endregion
 
 		#endregion
 
