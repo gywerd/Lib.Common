@@ -20,7 +20,7 @@
 		<SignAssembly>False</SignAssembly>
 		<ErrorReport>prompt</ErrorReport>
 		<Configurations>Debug;Release</Configurations>
-		<Nullable>disable</Nullable>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Version">

@@ -42,12 +42,12 @@ namespace Lib.Common.Sql
 
 		}
 
-		/// <returns>List{strings} from <paramref name="storedProcedure"/> in database</returns>
+		/// <returns>List{strings} from <paramref name="proc"/> in database</returns>
 		/// <param name="conn">Connection string</param>
 		/// <param name="proc">Name of Stored procedure</param>
 		/// <param name="args">e.g. @InstitutionIdentifier, @OrganizationStructureIdentifier or @OrganizationIdentifier</param>
 		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
-		public static List<string> ReadListFromDataBaseFromStoredProcedure(string conn, string proc, string[] args=null)
+		public static List<string> ReadListFromDataBaseFromStoredProcedure(string conn, string proc, string[]? args=null)
 		{
 			if (string.IsNullOrWhiteSpace(conn)) throw new ArgumentNullOrWhiteSpaceException(nameof(conn), conn, nameof(conn)+Error.CantBeNullWhSp);
 			if (string.IsNullOrWhiteSpace(proc)) throw new ArgumentNullOrWhiteSpaceException(nameof(proc), proc, nameof(proc)+Error.CantBeNullWhSp);

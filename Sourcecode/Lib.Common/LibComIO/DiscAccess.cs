@@ -1,17 +1,13 @@
 ﻿// Public Domain. See License.txt
 using System;
+using System.IO;
+using System.Text;
 
 namespace Lib.Common.Disc
 {
 	///<summary>Logic for simple disc access</summary>
 	public class DiscAccess
 	{
-		#region Properties
-		///<remarks />
-		public static string WorkingDirectoryPath { get; } = System.IO.Directory.GetCurrentDirectory();
-
-		#endregion
-
 		#region Methods
 
 		#region Create
@@ -31,9 +27,9 @@ namespace Lib.Common.Disc
 		/// <param name="dashes">input int</param>
 		private static string CreateDashString(int dashes)
 		{
-			string result=string.Empty;
+			string result = string.Empty;
 
-			for (int i=0; i < dashes; i++) result += "-";
+			for (int i = 0; i<dashes; i++) result+="-";
 
 			return result;
 
@@ -72,10 +68,10 @@ namespace Lib.Common.Disc
 		/// <exception cref="ArgumentNullException" />
 		public static string RetrieveDashedStringConsole(string s)
 		{
-			if (s==null) throw new ArgumentNullException(nameof(s),nameof(s)+Error.CantBeNull);
+			if (s==null) throw new ArgumentNullException(nameof(s), nameof(s)+Error.CantBeNull);
 
-			if(s.Length.Equals(0)) return CreateDashString(70);
-			if(s.Length>70) return s.Remove(70);
+			if (s.Length.Equals(0)) return CreateDashString(70);
+			if (s.Length>70) return s.Remove(70);
 			else return CreateDashString((70-s.Length)/2)+s+CreateDashString((70-s.Length)-((70-s.Length)/2));
 
 		}
@@ -85,10 +81,10 @@ namespace Lib.Common.Disc
 		/// <exception cref="ArgumentNullException" />
 		public static string RetrieveDashedStringLog(string s)
 		{
-			if(s==null) throw new ArgumentNullException(nameof(s),nameof(s)+Error.CantBeNull);
-			
-			if(s.Length.Equals(0)) return CreateDashString(240);
-			if(s.Length>240) return s.Remove(240);
+			if (s==null) throw new ArgumentNullException(nameof(s), nameof(s)+Error.CantBeNull);
+
+			if (s.Length.Equals(0)) return CreateDashString(240);
+			if (s.Length>240) return s.Remove(240);
 			else return CreateDashString((240-s.Length)/2)+s+CreateDashString((240-s.Length)-((240-s.Length)/2));
 
 		}
@@ -96,17 +92,11 @@ namespace Lib.Common.Disc
 		#endregion
 
 		#region Write
-		/// <summary>Writes the <paramref name="content"/> to <paramref name="path"/></summary>
-		/// <param name="path">File pame</param>
-		/// <param name="content">File content</param>
-		/// <param name="encoding" />
-		public static void WriteStringToFile(string path, string content, System.Text.Encoding encoding=null) => System.IO.File.WriteAllText(path, content+Environment.NewLine, encoding);
+		/// <summary>Writes the <paramref name="content"/> to <paramref name="path"/></summary><param name="path">File pame</param><param name="content">File content</param><param name="encoding" />
+		public static void WriteStringToFile(string path, string content, Encoding? encoding=null) { if(encoding==null) encoding=Encoding.UTF8; File.WriteAllText(path, content+Environment.NewLine, encoding); }
 
-		/// <summary>Adds <paramref name="content"/> to specified <paramref name="path"/></summary>
-		/// <param name="path">File path</param>
-		/// <param name="content">Line content</param>
-		/// <param name="encoding" />
-		public static void WriteStringLineToFile(string path, string content, System.Text.Encoding encoding=null) => System.IO.File.AppendAllText(path, content+Environment.NewLine, encoding);
+		/// <summary>Adds <paramref name="content"/> to specified <paramref name="path"/></summary><param name="path">File path</param><param name="content">Line content</param><param name="encoding" />
+		public static void WriteStringLineToFile(string path, string content, Encoding? encoding=null) { if(encoding==null) encoding=Encoding.UTF8; File.AppendAllText(path, content+Environment.NewLine, encoding); }
 
 		#endregion
 

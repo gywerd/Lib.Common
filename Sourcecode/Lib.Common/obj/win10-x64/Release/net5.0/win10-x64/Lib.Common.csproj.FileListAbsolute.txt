@@ -19,4 +19,3 @@ C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\obj\win10-x64\Rele
 C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\obj\win10-x64\Release\net5.0\win10-x64\Lib.Common.csproj.CoreCompileInputs.cache
 C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\obj\win10-x64\Release\net5.0\win10-x64\Lib.Common_1.0.0.1_win10-x64.dll
 C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\obj\win10-x64\Release\net5.0\win10-x64\ref\Lib.Common_1.0.0.1_win10-x64.dll
-C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\obj\win10-x64\Release\net5.0\win10-x64\Lib.Common.csproj.AssemblyReference.cache

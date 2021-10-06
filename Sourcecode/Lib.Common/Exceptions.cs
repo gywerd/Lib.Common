@@ -189,38 +189,19 @@ namespace Lib.Common
 		public ExpressionException(string? message, Exception? innerException) : base(message, innerException) { }
 
 		/// <remarks />
-		public ExpressionException(string? exprName, object? actualValue, string? message) : base(message)
-		{
-			if (!string.IsNullOrWhiteSpace(exprName))
-			{
-				this.ExpressionName=exprName;
-			}
-
-			if (actualValue == null)
-			{
-				this.ActualValue=actualValue;
-			}
-
-		}
+		public ExpressionException(string? exprName, object? actualValue, string? message) : base(message) { if (!string.IsNullOrWhiteSpace(exprName)) this.ExpressionName=exprName; if (actualValue != null) this.ActualValue=actualValue; }
 
 		/// <remarks />
-		public ExpressionException(string? exprName, string? message) : base(message) 
-			{
-			if (!string.IsNullOrWhiteSpace(exprName))
-			{
-				this.ExpressionName=exprName;
-			}
-
-		}
+		public ExpressionException(string? exprName, string? message) : base(message) { if (!string.IsNullOrWhiteSpace(exprName)) this.ExpressionName=exprName; }
 
 		#endregion
 
 		#region Properties
 		/// <remarks />
-		public object ActualValue { get; init; }
+		public object ActualValue { get; init; } = new();
 
 		/// <remarks />
-		protected string ExpressionName { get; init; }
+		protected string ExpressionName { get; init; } = string.Empty;
 
 		#endregion
 

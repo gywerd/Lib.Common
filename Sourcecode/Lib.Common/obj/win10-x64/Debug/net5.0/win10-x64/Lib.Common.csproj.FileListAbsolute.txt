@@ -24,3 +24,18 @@ C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\bin\net5.0\win10-x
 C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\bin\net5.0\win10-x64\ref\Lib.Common_1.0.0.1_win10-x64.dll
 C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\bin\net5.0\win10-x64\Lib.Common_1.0.0.1_win10-x64.pdb
 C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\bin\net5.0\win10-x64\Lib.Common_win10-x64.xml
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\bin\net5.0\win10-x64\LICENSE.txt
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\bin\net5.0\win10-x64\Lib.Common_1.0.0.1_win10-x64.deps.json
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\bin\net5.0\win10-x64\Lib.Common_1.0.0.1_win10-x64.dll
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\bin\net5.0\win10-x64\ref\Lib.Common_1.0.0.1_win10-x64.dll
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\bin\net5.0\win10-x64\Lib.Common_1.0.0.1_win10-x64.pdb
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\bin\net5.0\win10-x64\Lib.Common_win10-x64.xml
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common.AssemblyInfoInputs.cache
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common.AssemblyInfo.cs
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common.csproj.CoreCompileInputs.cache
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common_1.0.0.1_win10-x64.dll
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\ref\Lib.Common_1.0.0.1_win10-x64.dll
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common_1.0.0.1_win10-x64.pdb
+C:\Users\dibdbg\source\repos\SD Database Suite\RC\SdSuite3\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common.csproj.AssemblyReference.cache
+C:\Users\dibdbg\source\repos\Lib.Common\Sourcecode\Lib.Common\obj\win10-x64\Debug\net5.0\win10-x64\Lib.Common.csproj.AssemblyReference.cache

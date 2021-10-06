@@ -102,7 +102,7 @@ namespace Lib.Common.Sql
 		/// <param name="proc">Name of Stored procedure</param>
 		/// <param name="args">string - @InstitutionIdentifier, @OrganizationStructureIdentifier or @OrganizationIdentifier</param>
 		/// <exception cref="ArgumentNullOrWhiteSpaceException" />
-		protected static DataTable DbReturnDataTableFromStoredProcedure(string conn, string proc, string[] args = null)
+		protected static DataTable DbReturnDataTableFromStoredProcedure(string conn, string proc, string[]? args = null)
 		{
 			if (string.IsNullOrWhiteSpace(conn)) throw new ArgumentNullOrWhiteSpaceException(nameof(conn), conn, nameof(conn)+Error.CantBeNullWhSp);
 			if (string.IsNullOrWhiteSpace(proc)) throw new ArgumentNullOrWhiteSpaceException(nameof(proc), proc, nameof(proc)+Error.CantBeNullWhSp);

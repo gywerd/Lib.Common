@@ -11,6 +11,9 @@ namespace Lib.Common
 		public const string CantBeEmpty = @" cannot be empty.";
 
 		/// <remarks />
+		public const string CantBeNeg = @" cannot be negative.";
+
+		/// <remarks />
 		public const string CantBeNull = @" cannot be NULL.";
 
 		/// <remarks />

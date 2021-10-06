@@ -4,910 +4,13 @@
         <name>Lib.Common_1.0.0.1_win10-x64</name>
     </assembly>
     <members>
-        <member name="T:Lib.Common.DataTypes.Bit">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.#ctor(System.Int32)">
-            <remarks />
-            <param name="i">0 or 1</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.#ctor(System.String)">
-            <remarks />
-            <param name="s">'true' or 'false'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.#ctor(System.Boolean)">
-            <remarks />
-            <param name="bit" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(System.Int32)~Lib.Common.DataTypes.Bit">
-            <returns><paramref name="i"/> as Bit</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(System.String)~Lib.Common.DataTypes.Bit">
-            <returns><paramref name="s"/> as Bit</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(System.Boolean)~Lib.Common.DataTypes.Bit">
-            <returns><paramref name="b"/> as Bit</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(Lib.Common.DataTypes.Bit)~System.Int32">
-            <returns><paramref name="bit"/> as integer</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(Lib.Common.DataTypes.Bit)~System.String">
-            <returns><paramref name="bit"/> as a string</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.op_Implicit(Lib.Common.DataTypes.Bit)~System.Boolean">
-            <returns><paramref name="bit"/> as a bool</returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Bit.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.ToBoolean">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Bit"/> as an <see cref="T:System.Boolean"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.ToInt32">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Bit"/> as an <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Bit"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Bit"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Bit.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Bit"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Day format as a <see cref="T:System.String"/> - e.g. 'g", and 'G'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-        </member>
-        <member name="T:Lib.Common.DataTypes.Date">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.#ctor(Lib.Common.DataTypes.Date)">
-            <remarks />
-            <exception cref="T:System.ArgumentNullException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.DateTime)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.Int32,System.Int32,System.Int32)">
-            <remarks />
-            <exception cref="T:System.ArgumentOutOfRangeException" />
-            <exception cref="T:Lib.Common.InvalidRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.String,System.String,System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.op_Implicit(System.DateTime)~Lib.Common.DataTypes.Date">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Date"/> using data from a <see cref="T:System.DateTime"/></summary>
-            <param name="dateTime"></param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.op_Implicit(System.String)~Lib.Common.DataTypes.Date">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Date"/> using data from <see cref="T:System.DateTime"/></summary>
-            <param name="date">Date as <paramref name="date"/> with the format 'yyyy-MM-dd'</param>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.op_Implicit(Lib.Common.DataTypes.Date)~System.DateTime">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Date"/> as a <see cref="T:System.DateTime"/></returns>
-            <param name="date"></param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.op_Implicit(Lib.Common.DataTypes.Date)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Date"/> as a <see cref="T:System.String"/></returns>
-            <param name="date"></param>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Date.LeapYear">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Date.ValidDate">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Date.Day">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Date.Month">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Date.Year">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Date.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.Clone(Lib.Common.DataTypes.Date)">
-            <returns>Identical copy of <paramref name="date"/></returns>
-            <param name="date"><see cref="T:Lib.Common.DataTypes.Date"/> to be cloned</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.Equals(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
-            <returns>'true' if <paramref name="date1"/> is identical to <paramref name="date2"/> - else 'false'</returns>
-            <param name="date1">1st <see cref="T:Lib.Common.DataTypes.Date"/> to compare</param>
-            <param name="date2">2nd <see cref="T:Lib.Common.DataTypes.Date"/> to compare</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.IsEmpty(Lib.Common.DataTypes.Date)">
-            <returns>'true' if value of <paramref name="date"/> is '2010-01-01' - else false</returns>
-            <param name="date"><see cref="T:Lib.Common.DataTypes.Date"/> to check</param>
-            <exception cref="T:System.ArgumentNullException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.IsValid(System.String)">
-            <returns>'true' if <paramref name="date"/> is valid - else 'false'</returns>
-            <param name="date">Date in the format 'yyyy-MM-dd' as <see cref="T:System.String"/></param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.ToString(Lib.Common.DataTypes.Date)">
-            <returns><paramref name="date"/> converted to <see cref="T:System.String"/></returns>
-            <param name="date"><see cref="T:Lib.Common.DataTypes.Date"/> to convert</param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.AddDays(System.Int32)">
-            <summary>Adds number of <paramref name="days"/> to this <see cref="T:Lib.Common.DataTypes.Date"/> (or substracts if <paramref name="days"/> is neagative)</summary>
-            <param name="days">Number of days to add as <see cref="T:System.Int32"/></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.AddDays(System.String)">
-            <summary>Adds number of <paramref name="days"/> to this <see cref="T:Lib.Common.DataTypes.Date"/> (or substracts if <paramref name="days"/> is neagative)</summary>
-            <param name="days">Number of days to add as <see cref="T:System.String"/></param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.AddMonths(System.Int32)">
-            <summary>Adds number of <paramref name="months"/> to this <see cref="T:Lib.Common.DataTypes.Date"/> (or substracts if <paramref name="months"/> is neagative)</summary>
-            <param name="months">Number of months to add as <see cref="T:System.Int32"/></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.AddMonths(System.String)">
-            <summary>Adds number of <paramref name="months"/> to this <see cref="T:Lib.Common.DataTypes.Date"/> (or substracts if <paramref name="months"/> is neagative)</summary>
-            <param name="months">Number of months to add as <see cref="T:System.String"/></param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.AddYears(System.Int32)">
-            <summary>Adds number of <paramref name="years"/> to this <see cref="T:Lib.Common.DataTypes.Date"/> (or substracts if <paramref name="years"/> is neagative)</summary>
-            <param name="years">Number of years to add as <see cref="T:System.Int32"/></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.AddYears(System.String)">
-            <summary>Adds number of <paramref name="years"/> to this <see cref="T:Lib.Common.DataTypes.Date"/> (or substracts if <paramref name="years"/> is neagative)</summary>
-            <param name="years">Number of years to add as <see cref="T:System.String"/></param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.CheckValidDate">
-            <summary>Checks wether <see cref="P:Lib.Common.DataTypes.Date.Year"/> is a leap year, and sets the <see cref="P:Lib.Common.DataTypes.Date.LeapYear"/> flag</summary>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.CheckLeapYear">
-            <summary>Checks wether <see cref="P:Lib.Common.DataTypes.Date.Year"/> is a leap year, and sets the <see cref="P:Lib.Common.DataTypes.Date.LeapYear"/> flag</summary>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.Clone">
-            <returns>Identical copy of this <see cref="T:Lib.Common.DataTypes.Date"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.Equals(System.String)">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Date"/> is identical to <paramref name="date"/> - else 'false'</returns>
-            <param name="date">Date to compare as <see cref="T:System.String"/> in format 'yyyy-DD-mm'</param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.Equals(Lib.Common.DataTypes.Date)">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Date"/> is identical to <paramref name="date"/> - else 'false'</returns>
-            <param name="date"></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.Equals(System.DateTime)">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Date"/> is identical to <paramref name="dateTime"/>.Date - else 'false'</returns>
-            <param name="dateTime">Month or day</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.IsEmpty">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Date"/> is equal to '2010-01-01' - else 'false'</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.RetrieveNegYearsMonths(System.Int32,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.RetrieveNegYearsMonths(System.String,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.RetrieveNegYearsMonthsDays(System.String,System.Int32@,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.RetrieveYearsMonths(System.String,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.RetrieveYearsMonthsDays(System.String,System.Int32@,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.ToDateTime">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Date"/> as <see cref="T:System.DateTime"/></returns>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.NullOrWhiteSpaceRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Date"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Date"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Date.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Date"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-        </member>
-        <member name="T:Lib.Common.DataTypes.Day">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.#ctor(System.Int32)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.#ctor(System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.op_Implicit(System.Int32)~Lib.Common.DataTypes.Day">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Day"/> using data from an <see cref="T:System.Int32"/></summary>
-            <param name="day">An within the range of [1;31]</param>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.op_Implicit(System.String)~Lib.Common.DataTypes.Day">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Day"/> using data from a <see cref="T:System.String"/></summary>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.op_Implicit(Lib.Common.DataTypes.Day)~System.Int32">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Day"/> as a <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.op_Implicit(Lib.Common.DataTypes.Day)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Day"/> as a <see cref="T:System.String"/></returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Day.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.ToTwoCharString(System.String)">
-            <returns><paramref name="day"/> converted two character <see cref="T:System.String"/></returns>
-            <exception cref="T:Lib.Common.NullOrWhiteSpaceRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.ToTwoCharString(System.Int32)">
-            <returns><paramref name="day"/> converted into a two character string</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.ToInt32">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Day"/> as an <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Day"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Day"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Day.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Day"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Day format as a <see cref="T:System.String"/> - e.g. 'g", and 'G'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-        </member>
-        <member name="T:Lib.Common.DataTypes.Month">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.#ctor(System.Int32)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.#ctor(System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.op_Implicit(System.Int32)~Lib.Common.DataTypes.Month">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Month"/> using data from an <see cref="T:System.Int32"/></summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.op_Implicit(System.String)~Lib.Common.DataTypes.Month">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Month"/> using data from a <see cref="T:System.String"/></summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.op_Implicit(Lib.Common.DataTypes.Month)~System.Int32">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Month"/> as a <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.op_Implicit(Lib.Common.DataTypes.Month)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Month"/> as a <see cref="T:System.String"/></returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Month.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.ToTwoCharString(System.String)">
-            <returns><paramref name="month"/> converted two character <see cref="T:System.String"/></returns>
-            <exception cref="T:Lib.Common.NullOrWhiteSpaceRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.ToTwoCharString(System.Int32)">
-            <returns><paramref name="month"/> converted into a two character string</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.ToInt32">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Month"/> as an <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Month"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Month"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Month"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Month format as a <see cref="T:System.String"/> - e.g. 'g", and 'G'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.RetrieveDaysPerMonth(System.Int32,System.Boolean)">
-            <returns>days per month as <see cref="T:System.Int32"/></returns>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Month.RetrieveMonthName(System.Int32)">
-            <returns>Name of month as <see cref="T:System.String"/></returns>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="T:Lib.Common.DataTypes.Year">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.#ctor(System.Int32)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.#ctor(System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.op_Implicit(System.Int32)~Lib.Common.DataTypes.Year">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Year"/> using data from an <see cref="T:System.Int32"/></summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.op_Implicit(System.String)~Lib.Common.DataTypes.Year">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Year"/> using data from a <see cref="T:System.String"/></summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.op_Implicit(Lib.Common.DataTypes.Year)~System.Int32">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Year"/> as a <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.op_Implicit(Lib.Common.DataTypes.Year)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Year"/> as a <see cref="T:System.String"/></returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Year.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.IsLeapYear(System.Int32)">
-            <returns>'true' if <paramref name="year"/> is a leap year - else 'false'</returns>
-            <param name="year">Four digit integer within the range [1900;9999]</param>
-            <exception cref="T:System.ArgumentOutOfRangeException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.IsLeapYear(System.String)">
-            <returns>'true' if <paramref name="year"/> is a leap year - else 'false'</returns>
-            <param name="year">Four digit integer within the range [1900;9999] as <see cref="T:System.String"/> with the format 'yyyy'</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-            <exception cref="T:System.ArgumentOutOfRangeException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.ToFourCharString(System.Int32)">
-            <returns><paramref name="year"/> converted into a two character string</returns>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.ToFourCharString(System.String)">
-            <returns><paramref name="year"/> converted into four character <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.ToInt32">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Year"/> as an <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Year"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Year"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Year.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Year"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Year format as a <see cref="T:System.String"/> - e.g. 'g', and 'G'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-            <exception cref="T:System.FormatException" />
-        </member>
-        <member name="T:Lib.Common.DataTypes.Time">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.DateTime)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.#ctor(Lib.Common.DataTypes.Time)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.Int32,System.Int32,System.Int32)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.String,System.String,System.String)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.String)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.op_Implicit(System.DateTime)~Lib.Common.DataTypes.Time">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Time"/> using data from a <see cref="T:System.DateTime"/></summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.op_Implicit(System.String)~Lib.Common.DataTypes.Time">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Time"/> using data from <see cref="T:System.DateTime"/></summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.op_Implicit(Lib.Common.DataTypes.Time)~System.DateTime">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Time"/> as a <see cref="T:System.DateTime"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.op_Implicit(Lib.Common.DataTypes.Time)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Time"/> as a <see cref="T:System.String"/></returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Time.Hour">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Time.Minute">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Time.Second">
-            <remarks />
-        </member>
-        <member name="P:Lib.Common.DataTypes.Time.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.Clone(Lib.Common.DataTypes.Time)">
-            <param name="time"><see cref="T:Lib.Common.DataTypes.Time"/> to be cloned</param>
-            <returns>Identical copy of <paramref name="time"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.Equals(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
-            <returns>'true' if <paramref name="time1"/> is identical to <paramref name="time2"/> - else 'false'</returns>
-            <param name="time1">1st <see cref="T:Lib.Common.DataTypes.Time"/> to compare</param>
-            <param name="time2">2nd <see cref="T:Lib.Common.DataTypes.Time"/> to compare</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.IsEmpty(Lib.Common.DataTypes.Time)">
-            <returns>'true' if time equals '00:00:00'</returns>
-            <exception cref="T:System.ArgumentNullException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.IsValid(System.String)">
-            <returns>'true' if <paramref name="time"/> is valid - else 'false'</returns>
-            <param name="time">Time in the format 'HH:mm:ss' as <see cref="T:System.String"/></param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.ToString(Lib.Common.DataTypes.Time)">
-            <returns><paramref name="time"/> converted to <see cref="T:System.String"/></returns>
-            <param name="time"><see cref="T:Lib.Common.DataTypes.Date"/> to convert</param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.AddHours(System.Int32)">
-            <summary>Adds number of <paramref name="hours"/> to this <see cref="T:Lib.Common.DataTypes.Time"/> (or substracts if <paramref name="hours"/> is neagative)</summary>
-            <param name="hours">Number of hours to add as <see cref="T:System.Int32"/></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.AddHours(System.String)">
-            <summary>Adds number of <paramref name="hours"/> to this <see cref="T:Lib.Common.DataTypes.Time"/> (or substracts if <paramref name="hours"/> is neagative)</summary>
-            <param name="hours">Number of hours to add as <see cref="T:System.String"/></param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.AddMinutes(System.Int32)">
-            <summary>Adds number of <paramref name="minutes"/> to this <see cref="T:Lib.Common.DataTypes.Time"/> (or substracts if <paramref name="minutes"/> is neagative)</summary>
-            <param name="minutes">Number of months to add as <see cref="T:System.Int32"/></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.AddMinutes(System.String)">
-            <summary>Adds number of <paramref name="minutes"/> to this <see cref="T:Lib.Common.DataTypes.Time"/> (or substracts if <paramref name="minutes"/> is neagative)</summary>
-            <param name="minutes">Number of minutes to add as <see cref="T:System.String"/></param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.AddSeconds(System.Int32)">
-            <summary>Adds number of <paramref name="seconds"/> to this <see cref="T:Lib.Common.DataTypes.Time"/> (or substracts if <paramref name="seconds"/> is neagative)</summary>
-            <param name="seconds">Number of seconds to add as <see cref="T:System.Int32"/></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.AddSeconds(System.String)">
-            <summary>Adds number of <paramref name="seconds"/> to this <see cref="T:Lib.Common.DataTypes.Time"/> (or substracts if <paramref name="seconds"/> is neagative)</summary>
-            <param name="seconds">Number of seconds to add as <see cref="T:System.String"/></param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.Clone">
-            <returns>Identical copy of this <see cref="T:Lib.Common.DataTypes.Time"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.Equals(System.String)">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Time"/> is identical to <paramref name="time"/> - else 'false'</returns>
-            <param name="time">Date to compare as <see cref="T:System.String"/> in format 'yyyy-DD-mm'</param>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.Equals(Lib.Common.DataTypes.Time)">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Time"/> is identical to <paramref name="time"/> - else 'false'</returns>
-            <param name="time"></param>
-            <exception cref="T:System.NullReferenceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.Equals(System.DateTime)">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Time"/> is identical to <paramref name="dateTime"/>.Time - else 'false'</returns>
-            <param name="dateTime">Month or day</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.IsEmpty">
-            <returns>'true' if this <see cref="T:Lib.Common.DataTypes.Time"/> is equal to '00:00:00' - else 'false'</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveNegHoursMinutes(System.Int32,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveNegHoursMinutes(System.String,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveNegHoursMinutesSeconds(System.Int32,System.Int32@,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveNegHoursMinutesSeconds(System.String,System.Int32@,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveHoursMinutes(System.Int32,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveHoursMinutes(System.String,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveHoursMinutesSeconds(System.Int32,System.Int32@,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.RetrieveHoursMinutesSeconds(System.String,System.Int32@,System.Int32@,System.Int32@)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.ToDateTime">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Time"/> as <see cref="T:System.DateTime"/></returns>
-            <exception cref="T:System.NullReferenceException" />
-            <exception cref="T:Lib.Common.NullOrWhiteSpaceRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Time"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Time"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Time.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Time"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-            <exception cref="T:System.FormatException" />
-        </member>
-        <member name="T:Lib.Common.DataTypes.Minute">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.#ctor(System.Int32)">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.#ctor(System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.op_Implicit(System.Int32)~Lib.Common.DataTypes.Minute">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Minute"/> using data from an <see cref="T:System.Int32"/></summary>
-            <param name="minute">An within the range of [0;59] as <see cref="T:System.Int32"/></param>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.op_Implicit(System.String)~Lib.Common.DataTypes.Minute">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Minute"/> using data from a <see cref="T:System.String"/></summary>
-            <param name="minute">An integer within the range of [0;59] as <see cref="T:System.String"/></param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.op_Implicit(Lib.Common.DataTypes.Minute)~System.Int32">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Minute"/> as a <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.op_Implicit(Lib.Common.DataTypes.Minute)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Minute"/> as a <see cref="T:System.String"/></returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Minute.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.ToTwoCharString(System.String)">
-            <returns><paramref name="minute"/> converted two character <see cref="T:System.String"/></returns>
-            <exception cref="T:Lib.Common.NullOrWhiteSpaceRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.ToTwoCharString(System.Int32)">
-            <returns><paramref name="minute"/> converted into a two character string</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.ToInt32">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Minute"/> as an <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Minute"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Minute"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Second format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Minute.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Minute"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Second format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-            <exception cref="T:System.FormatException" />
-        </member>
-        <member name="T:Lib.Common.DataTypes.Hour">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.#ctor(System.Int32)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.#ctor(System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.op_Implicit(System.Int32)~Lib.Common.DataTypes.Hour">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Hour"/> using data from an <see cref="T:System.Int32"/></summary>
-            <param name="hour">An within the range of [0;59] as <see cref="T:System.Int32"/></param>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.op_Implicit(System.String)~Lib.Common.DataTypes.Hour">
-            <summary>Sets <see cref="T:Lib.Common.DataTypes.Hour"/> using data from a <see cref="T:System.String"/></summary>
-            <param name="hour">An integer within the range of [0;59] as <see cref="T:System.String"/></param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.op_Implicit(Lib.Common.DataTypes.Hour)~System.Int32">
-            <returns>Value of <see cref="T:Lib.Common.DataTypes.Hour"/> as a <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.op_Implicit(Lib.Common.DataTypes.Hour)~System.String">
-            <returns> Value of <see cref="T:Lib.Common.DataTypes.Hour"/> as a <see cref="T:System.String"/></returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Hour.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.ToTwoCharString(System.Int32)">
-            <returns><paramref name="hour"/> converted into a two character string</returns>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.ToTwoCharString(System.String)">
-            <returns><paramref name="hour"/> converted two character <see cref="T:System.String"/></returns>
-            <exception cref="T:Lib.Common.NullOrWhiteSpaceRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.ToInt32">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Hour"/> as an <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Hour"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Hour"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Hour.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Hour"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-            <exception cref="T:System.FormatException" />
-        </member>
-        <member name="T:Lib.Common.DataTypes.Second">
-            <Summary>DataType</Summary>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.#ctor">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.#ctor(System.Int32)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.#ctor(System.String)">
-            <remarks />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.op_Implicit(System.Int32)~Lib.Common.DataTypes.Second">
-            <summary>Sets <see cref="P:Lib.Common.DataTypes.Second.Value"/> using data from an <see cref="T:System.Int32"/></summary>
-            <param name="second">An within the range of [0;59] as <see cref="T:System.Int32"/></param>
-            <exception cref="T:Lib.Common.ArgumentInvalidException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.op_Implicit(System.String)~Lib.Common.DataTypes.Second">
-            <summary>Sets <see cref="P:Lib.Common.DataTypes.Second.Value"/> using data from a <see cref="T:System.String"/></summary>
-            <param name="second">An integer within the range of [0;59] as <see cref="T:System.String"/></param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.op_Implicit(Lib.Common.DataTypes.Second)~System.Int32">
-            <returns>Value of <see cref="P:Lib.Common.DataTypes.Second.Value"/> as a <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.op_Implicit(Lib.Common.DataTypes.Second)~System.String">
-            <returns> Value of <see cref="P:Lib.Common.DataTypes.Second.Value"/> as a <see cref="T:System.String"/></returns>
-        </member>
-        <member name="P:Lib.Common.DataTypes.Second.Value">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.ToTwoCharString(System.String)">
-            <returns><paramref name="second"/> converted two character <see cref="T:System.String"/></returns>
-            <exception cref="T:Lib.Common.NullOrWhiteSpaceRefException" />
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.ToTwoCharString(System.Int32)">
-            <returns><paramref name="second"/> converted into a two character string</returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.ToInt32">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Second"/> as an <see cref="T:System.Int32"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.ToString">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Second"/> as <see cref="T:System.String"/></returns>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.ToString(System.String)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Second"/> as <see cref="T:System.String"/> with requested <paramref name="format"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-        </member>
-        <member name="M:Lib.Common.DataTypes.Second.ToString(System.String,System.IFormatProvider)">
-            <returns>This <see cref="T:Lib.Common.DataTypes.Second"/> as <see cref="T:System.String"/> with requested <paramref name="format"/> and <paramref name="provider"/></returns>
-            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
-            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
-            <exception cref="T:System.FormatException" />
-        </member>
-        <member name="T:Lib.Common.Sql.DbConn">
-            <remarks/>
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.DbReturnArrayListString(System.String,System.String)">
-            <returns>Response to <paramref name="query"/> from database as an ArrayList</returns>
-            <param name="conn">Connection string</param>
-            <param name="query">SQL-query</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.DbReturnDataTable(System.String,System.String)">
-            <returns>Response to <paramref name="query"/> from database as a <see cref="T:System.Data.DataTable"/></returns>
-            <param name="conn">Connection string</param>
-            <param name="query">SQL-query</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.DbReturnDataTable(System.Data.SqlClient.SqlCommand)">
-            <returns>Response to <paramref name="cmd"/> from database as a <see cref="T:System.Data.DataTable"/></returns>
-            <param name="cmd">SqlCommand</param>
-            <exception cref="T:System.ArgumentNullException" />
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.DbReturnDataTableFromStoredProcedure(System.String,System.String,System.String[])">
-            <returns>Response to <paramref name="proc"/> from database as a <see cref="T:System.Data.DataTable"/></returns>
-            <param name="conn">Connection string</param>
-            <param name="proc">Name of Stored procedure</param>
-            <param name="args">string - @InstitutionIdentifier, @OrganizationStructureIdentifier or @OrganizationIdentifier</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.DbReturnListString(System.String,System.String)">
-            <returns>Response to <paramref name="query"/> from database as a List{string}</returns>
-            <param name="conn">Connection string</param>
-            <param name="query">SQL-query</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.DbReturnBool(System.String,System.String)">
-            <returns>Response to <paramref name="query"/> as a <see cref="T:System.Boolean"/></returns>
-            <param name="conn">Connection string</param>
-            <param name="query">SQL-query</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.DbReturnBool(System.String,System.String,System.String[])">
-            <returns>Response to <paramref name="query"/> from database as a <see cref="T:System.Boolean"/></returns>
-            <param name="conn">Connection string</param>
-            <param name="query">SQL-query</param>
-            <param name="args"><see cref="T:System.String"/>[]</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-            <exception cref="T:System.ArgumentNullException" />
-        </member>
-        <member name="M:Lib.Common.Sql.DbConn.FunctionExecuteNonQuery(System.String,System.String)">
-            <summary>Sends an <paramref name="query"/> to database</summary>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-            <param name="conn">Connection string</param>
-            <param name="query">SQL-query</param>
-            <returns>Result as <see cref="T:System.Boolean"/></returns>
-        </member>
-        <member name="T:Lib.Common.Sql.Executor">
-            <remarks/>
-        </member>
-        <member name="M:Lib.Common.Sql.Executor.ReadListFromDataBase(System.String,System.String,System.Int32)">
-            <returns>List{strings} from <paramref name="table"/> in database</returns>
-            <param name="conn">Connection string</param>
-            <param name="table">Name of database table</param> />
-            <param name="id" />
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.Executor.ReadListFromDataBaseFromStoredProcedure(System.String,System.String,System.String[])">
-            <returns>List{strings} from <paramref name="storedProcedure"/> in database</returns>
-            <param name="conn">Connection string</param>
-            <param name="proc">Name of Stored procedure</param>
-            <param name="args">e.g. @InstitutionIdentifier, @OrganizationStructureIdentifier or @OrganizationIdentifier</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.Executor.WriteToDataBase(System.String,System.String)">
-            <summary>Sends <paramref name="query"/> to database</summary>
-            <param name="conn">Connection string</param>
-            <param name="query">SQL-query</param>
-            <returns>Result as <see cref="T:System.Boolean"/></returns>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Sql.Executor.GetListDataTable(System.String,System.String,System.Int32)">
-            <returns>List from <paramref name="table"/> as a <see cref="T:System.Data.DataTable"/></returns>
-            <param name="conn">Connection string</param>
-            <param name="table">Database table name</param>
-            <param name="id">if id>=0 selects specific entry in table; else selects all entries</param>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="T:Lib.Common.Disc.DiscAccess">
-            <summary>Logic for simple disc access</summary>
-        </member>
-        <member name="P:Lib.Common.Disc.DiscAccess.WorkingDirectoryPath">
-            <remarks />
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.CreateFile(System.String)">
-            <summary>Creates a file on disk</summary>
-            <param name="path">File path</param>
-            <returns>Result as bool</returns>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.CreateFolder(System.String)">
-            <summary>Creates a folder on disk</summary>
-            <param name="path">Folder path</param>
-            <returns>Result as bool</returns>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.CreateDashString(System.Int32)">
-            <returns><see cref="T:System.String"/> containing the requested amount of dashes</returns>
-            <param name="dashes">input int</param>
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.FileExist(System.String)">
-            <summary>Checks wether a file exists on disk</summary>
-            <param name="path">File path</param>
-            <returns>Result as bool</returns>
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.FolderExist(System.String)">
-            <summary>Checks wether a folder exists on disk</summary>
-            <param name="path">Folder path</param>
-            <returns>Result as bool</returns>
-            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.ReadStringArrayFromFile(System.String)">
-            <returns>Content of <paramref name="path"/> as string[]</returns>
-            <param name="path">File path</param>
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.ReadStringFromFile(System.String)">
-            <returns>Content of <paramref name="path"/> as <see cref="T:System.String"/></returns>
-            <param name="path">File path</param>
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.RetrieveDashedStringConsole(System.String)">
-            <returns><paramref name="s"/> extended with dashes intended for Console as string</returns>
-            <param name="s" />
-            <exception cref="T:System.ArgumentNullException" />
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.RetrieveDashedStringLog(System.String)">
-            <returns><paramref name="s"/> extended with dashes intended for log file as string</returns>
-            <param name="s" />
-            <exception cref="T:System.ArgumentNullException" />
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.WriteStringToFile(System.String,System.String,System.Text.Encoding)">
-            <summary>Writes the <paramref name="content"/> to <paramref name="path"/></summary>
-            <param name="path">File pame</param>
-            <param name="content">File content</param>
-            <param name="encoding" />
-        </member>
-        <member name="M:Lib.Common.Disc.DiscAccess.WriteStringLineToFile(System.String,System.String,System.Text.Encoding)">
-            <summary>Adds <paramref name="content"/> to specified <paramref name="path"/></summary>
-            <param name="path">File path</param>
-            <param name="content">Line content</param>
-            <param name="encoding" />
-        </member>
         <member name="T:Lib.Common.Error">
             <Summary>Common Error messages</Summary>
         </member>
         <member name="F:Lib.Common.Error.CantBeEmpty">
+            <remarks />
+        </member>
+        <member name="F:Lib.Common.Error.CantBeNeg">
             <remarks />
         </member>
         <member name="F:Lib.Common.Error.CantBeNull">
@@ -1266,6 +369,630 @@
         </member>
         <member name="M:Lib.Common.UnknownRefException.ToErrorString">
             <remarks />
+        </member>
+        <member name="T:Lib.Common.DataTypes.bit">
+            <Summary>DataType</Summary>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.#ctor">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.#ctor(System.Byte)">
+            <remarks />
+            <param name="i">0 or 1</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.#ctor(System.String)">
+            <remarks />
+            <param name="s">'true' or 'false'</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.#ctor(System.Boolean)">
+            <remarks />
+            <param name="b" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.#ctor(System.Object)">
+            <remarks />
+            <param name="obj" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Equality(Lib.Common.DataTypes.bit,Lib.Common.DataTypes.bit)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Inequality(Lib.Common.DataTypes.bit,Lib.Common.DataTypes.bit)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_LessThanOrEqual(Lib.Common.DataTypes.bit,Lib.Common.DataTypes.bit)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_GreaterThanOrEqual(Lib.Common.DataTypes.bit,Lib.Common.DataTypes.bit)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_LessThan(Lib.Common.DataTypes.bit,Lib.Common.DataTypes.bit)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_GreaterThan(Lib.Common.DataTypes.bit,Lib.Common.DataTypes.bit)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Explicit(System.Boolean)~Lib.Common.DataTypes.bit">
+            <returns><paramref name="b"/> as Bit</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Explicit(System.Int32)~Lib.Common.DataTypes.bit">
+            <returns><paramref name="s"/> as Bit</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Explicit(System.String)~Lib.Common.DataTypes.bit">
+            <returns><paramref name="s"/> as Bit</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Explicit(Lib.Common.DataTypes.bit)~System.Boolean">
+            <returns><paramref name="b"/> as a bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Explicit(Lib.Common.DataTypes.bit)~System.Int32">
+            <returns><paramref name="b"/> as a bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Explicit(Lib.Common.DataTypes.bit)~System.String">
+            <returns><paramref name="b"/> as a string</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Implicit(System.Byte)~Lib.Common.DataTypes.bit">
+            <returns><paramref name="b"/> as Bit</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.op_Implicit(Lib.Common.DataTypes.bit)~System.Byte">
+            <returns><paramref name="b"/> as integer</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.CompareTo(System.Object)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.Equals(Lib.Common.DataTypes.bit)">
+            <summary>Compares this Bit to <paramref name="b"/></summary><param name="b" /><returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.Equals(System.Object)">
+            <summary>Compares this Bit to <paramref name="obj"/></summary><param name="obj" /><returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.GetHashCode">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.ToBoolean">
+            <returns>This bit as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.ToInt32">
+            <returns>This bit as int</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.ToString">
+            <returns>This bit as string</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.ToString(System.String)">
+            <returns>This bit as string with requested <paramref name="format"/></returns>
+            <param name="format">e.g. 'g", or 'G'</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.ToString(System.String,System.IFormatProvider)">
+            <returns>This bit as string with requested <paramref name="format"/> and <paramref name="provider"/></returns>
+            <param name="format">e.g. 'g", or 'G'</param>
+            <param name="provider">e.g. 'da-DK' for danish</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.bit.Validate">
+            <remarks />
+        </member>
+        <member name="T:Lib.Common.DataTypes.Date">
+            <Summary>DataType</Summary>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.#ctor">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.#ctor(Lib.Common.DataTypes.Date)">
+            <param name="date" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.DateTime)">
+            <param name="dt" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.Int32,System.Int32,System.Int32)">
+            <remarks /><param name="year" /><param name="month" /><param name="day" /><exception cref="T:Lib.Common.ArgumentInvalidException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.String,System.String,System.String)">
+            <param name="year" /><param name="month" /><param name="day" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.#ctor(System.String)">
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" /><exception cref="T:Lib.Common.ArgumentInvalidException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_Equality(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_Inequality(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_GreaterThanOrEqual(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_LessThanOrEqual(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_GreaterThan(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_LessThan(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_Explicit(System.DateTime)~Lib.Common.DataTypes.Date">
+            <returns><paramref name="dt"/> as Date</returns><param name="dt" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_Explicit(Lib.Common.DataTypes.Date)~System.DateTime">
+            <returns><paramref name="date"/> as DateTime</returns><param name="date" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_Implicit(System.String)~Lib.Common.DataTypes.Date">
+            <returns><paramref name="date"/> as Date</returns><param name="date" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.op_Implicit(Lib.Common.DataTypes.Date)~System.String">
+            <returns><paramref name="date"/> as string</returns><param name="date" />
+        </member>
+        <member name="P:Lib.Common.DataTypes.Date.Value">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.Clone(Lib.Common.DataTypes.Date)">
+            <returns>Identical copy of <paramref name="date"/></returns><param name="date" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.Equals(Lib.Common.DataTypes.Date,Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns><param name="date1" /><param name="date2" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsEmpty(Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns><param name="date" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsLeapYear(System.String)">
+            <remarks /><param name="year">Four digit integer within the range [1900;9999]</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsLeapYear(System.Decimal)">
+            <returns>Result as bool</returns><param name="year">Four digit integer within the range [1900;9999]</param><exception cref="T:Lib.Common.ArgumentInvalidException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsValid(Lib.Common.DataTypes.Date)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsValid(System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToString(Lib.Common.DataTypes.Date)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToFourCharString(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToFourCharString(System.String)">
+            <returns><paramref name="s"/> as four character string</returns><param name="s" /><exception cref="T:Lib.Common.ArgumentInvalidException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToTwoCharString(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToTwoCharString(System.String)">
+            <returns><paramref name="s"/> as two character string</returns><param name="s" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.AddDays(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.AddDays(System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.AddMonths(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.AddMonths(System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.AddYears(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.AddYears(System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.Clone">
+            <returns>Identical copy of this <see cref="T:Lib.Common.DataTypes.Date"/></returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.CompareTo(System.Object)">
+            <remarks /><param name="obj" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.Equals(Lib.Common.DataTypes.Date)">
+            <returns>Result as bool</returns><param name="date" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.Equals(System.Object)">
+            <returns>Result as bool</returns><param name="obj">Date</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.GetHashCode">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.GetTypeCode">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsEmpty">
+            <returns>'true' if this Date is equal to '2010-01-01' - else 'false'</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsLeapYear">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.IsValid">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToBoolean(System.IFormatProvider)">
+            <returns>This Date as bool</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToByte(System.IFormatProvider)">
+            <returns>This Date as byte</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToChar(System.IFormatProvider)">
+            <returns>This Date as char</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToDateTime">
+            <returns>This Date as DateTime</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToDateTime(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns><param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToDecimal(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns><param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToDouble(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToInt16(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToInt32(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToInt64(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToSByte(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToSingle(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToString">
+            <returns>This Date as string</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToString(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToString(System.String)">
+            <returns>This Date as string with requested <paramref name="format"/></returns>
+            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToString(System.String,System.IFormatProvider)">
+            <returns>This Date as string with requested <paramref name="format"/> and <paramref name="provider"/></returns>
+            <param name="format">Date format as a <see cref="T:System.String"/> - e.g. 'd", 'D', and 'g'</param>
+            <param name="provider">Format provider as a <see cref="T:System.String"/> - e.g. 'da-DK' for danish</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToType(System.Type,System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="conversionType" />
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToUInt16(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToUInt32(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Date.ToUInt64(System.IFormatProvider)">
+            <returns>This Date as DateTime</returns>
+            <param name="provider" />
+        </member>
+        <member name="T:Lib.Common.DataTypes.Time">
+            <Summary>DataType</Summary>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.#ctor">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.DateTime)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.Int32,System.Int32,System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.String,System.String,System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.#ctor(System.String)">
+            <remarks /><exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.#ctor(Lib.Common.DataTypes.Time)">
+            <remarks /><exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_Equality(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_Inequality(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_GreaterThanOrEqual(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_LessThanOrEqual(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_GreaterThan(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_LessThan(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_Explicit(System.DateTime)~Lib.Common.DataTypes.Time">
+            <returns><paramref name="dt"/> as Time</returns><param name="dt" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_Explicit(Lib.Common.DataTypes.Time)~System.DateTime">
+            <returns><paramref name="time"/> as DateTime</returns><param name="time" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_Implicit(System.String)~Lib.Common.DataTypes.Time">
+            <returns><paramref name="time"/> as Date</returns><param name="time" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.op_Implicit(Lib.Common.DataTypes.Time)~System.String">
+            <returns><paramref name="time"/> as string</returns><param name="time" />
+        </member>
+        <member name="P:Lib.Common.DataTypes.Time.Value">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.Clone(Lib.Common.DataTypes.Time)">
+            <returns>Copy of <paramref name="time"/></returns><param name="time" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.Equals(Lib.Common.DataTypes.Time,Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns><param name="time1" /><param name="time2" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.IsEmpty(Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns><exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.IsValid(System.String)">
+            <returns>Result as bool</returns><param name="time">Time in the format 'HH:mm:ss'</param><exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToString(Lib.Common.DataTypes.Time)">
+            <returns><paramref name="time"/> as string</returns><param name="time" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToTwoCharString(System.String)">
+            <returns><paramref name="s"/> as two character string</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToTwoCharString(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.AddHours(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.AddHours(System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.AddMinutes(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.AddMinutes(System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.AddSeconds(System.Int32)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.AddSeconds(System.String)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.Clone">
+            <returns>Identical copy of this <see cref="T:Lib.Common.DataTypes.Time"/></returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.CompareTo(System.Object)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.Equals(Lib.Common.DataTypes.Time)">
+            <returns>Result as bool</returns><param name="time" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.Equals(System.Object)">
+            <returns>Result as bool</returns><param name="obj" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.GetHashCode">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.GetTypeCode">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.IsEmpty">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToBoolean(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToByte(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToChar(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToDateTime">
+            <returns>Result as DateTime</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToDateTime(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToDecimal(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToDouble(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToInt16(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToInt32(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToInt64(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToSByte(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToSingle(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToString">
+            <returns>This Time as string</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToString(System.IFormatProvider)">
+            <returns>This Time as string</returns>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToString(System.String)">
+            <returns>This Time as string with requested <paramref name="format"/></returns><param name="format">'d", 'D', or 'g'</param>
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToString(System.String,System.IFormatProvider)">
+            <returns>This Time as string with requested <paramref name="format"/> and <paramref name="provider"/></returns><param name="format">E.g. 'd", 'D', or 'g'</param><param name="provider">E.g. 'da-DK' for danish</param>
+            <exception cref="T:System.FormatException" />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToType(System.Type,System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToUInt16(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToUInt32(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="M:Lib.Common.DataTypes.Time.ToUInt64(System.IFormatProvider)">
+            <remarks />
+        </member>
+        <member name="T:Lib.Common.Sql.DbConn">
+            <remarks/>
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.DbReturnArrayListString(System.String,System.String)">
+            <returns>Response to <paramref name="query"/> from database as an ArrayList</returns>
+            <param name="conn">Connection string</param>
+            <param name="query">SQL-query</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.DbReturnDataTable(System.String,System.String)">
+            <returns>Response to <paramref name="query"/> from database as a <see cref="T:System.Data.DataTable"/></returns>
+            <param name="conn">Connection string</param>
+            <param name="query">SQL-query</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.DbReturnDataTable(System.Data.SqlClient.SqlCommand)">
+            <returns>Response to <paramref name="cmd"/> from database as a <see cref="T:System.Data.DataTable"/></returns>
+            <param name="cmd">SqlCommand</param>
+            <exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.DbReturnDataTableFromStoredProcedure(System.String,System.String,System.String[])">
+            <returns>Response to <paramref name="proc"/> from database as a <see cref="T:System.Data.DataTable"/></returns>
+            <param name="conn">Connection string</param>
+            <param name="proc">Name of Stored procedure</param>
+            <param name="args">string - @InstitutionIdentifier, @OrganizationStructureIdentifier or @OrganizationIdentifier</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.DbReturnListString(System.String,System.String)">
+            <returns>Response to <paramref name="query"/> from database as a List{string}</returns>
+            <param name="conn">Connection string</param>
+            <param name="query">SQL-query</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.DbReturnBool(System.String,System.String)">
+            <returns>Response to <paramref name="query"/> as a <see cref="T:System.Boolean"/></returns>
+            <param name="conn">Connection string</param>
+            <param name="query">SQL-query</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.DbReturnBool(System.String,System.String,System.String[])">
+            <returns>Response to <paramref name="query"/> from database as a <see cref="T:System.Boolean"/></returns>
+            <param name="conn">Connection string</param>
+            <param name="query">SQL-query</param>
+            <param name="args"><see cref="T:System.String"/>[]</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+            <exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.Sql.DbConn.FunctionExecuteNonQuery(System.String,System.String)">
+            <summary>Sends an <paramref name="query"/> to database</summary>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+            <param name="conn">Connection string</param>
+            <param name="query">SQL-query</param>
+            <returns>Result as <see cref="T:System.Boolean"/></returns>
+        </member>
+        <member name="T:Lib.Common.Sql.Executor">
+            <remarks/>
+        </member>
+        <member name="M:Lib.Common.Sql.Executor.ReadListFromDataBase(System.String,System.String,System.Int32)">
+            <returns>List{strings} from <paramref name="table"/> in database</returns>
+            <param name="conn">Connection string</param>
+            <param name="table">Name of database table</param> />
+            <param name="id" />
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.Executor.ReadListFromDataBaseFromStoredProcedure(System.String,System.String,System.String[])">
+            <returns>List{strings} from <paramref name="proc"/> in database</returns>
+            <param name="conn">Connection string</param>
+            <param name="proc">Name of Stored procedure</param>
+            <param name="args">e.g. @InstitutionIdentifier, @OrganizationStructureIdentifier or @OrganizationIdentifier</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.Executor.WriteToDataBase(System.String,System.String)">
+            <summary>Sends <paramref name="query"/> to database</summary>
+            <param name="conn">Connection string</param>
+            <param name="query">SQL-query</param>
+            <returns>Result as <see cref="T:System.Boolean"/></returns>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Sql.Executor.GetListDataTable(System.String,System.String,System.Int32)">
+            <returns>List from <paramref name="table"/> as a <see cref="T:System.Data.DataTable"/></returns>
+            <param name="conn">Connection string</param>
+            <param name="table">Database table name</param>
+            <param name="id">if id>=0 selects specific entry in table; else selects all entries</param>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="T:Lib.Common.Disc.DiscAccess">
+            <summary>Logic for simple disc access</summary>
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.CreateFile(System.String)">
+            <summary>Creates a file on disk</summary>
+            <param name="path">File path</param>
+            <returns>Result as bool</returns>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.CreateFolder(System.String)">
+            <summary>Creates a folder on disk</summary>
+            <param name="path">Folder path</param>
+            <returns>Result as bool</returns>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.CreateDashString(System.Int32)">
+            <returns><see cref="T:System.String"/> containing the requested amount of dashes</returns>
+            <param name="dashes">input int</param>
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.FileExist(System.String)">
+            <summary>Checks wether a file exists on disk</summary>
+            <param name="path">File path</param>
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.FolderExist(System.String)">
+            <summary>Checks wether a folder exists on disk</summary>
+            <param name="path">Folder path</param>
+            <returns>Result as bool</returns>
+            <exception cref="T:Lib.Common.ArgumentNullOrWhiteSpaceException" />
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.ReadStringArrayFromFile(System.String)">
+            <returns>Content of <paramref name="path"/> as string[]</returns>
+            <param name="path">File path</param>
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.ReadStringFromFile(System.String)">
+            <returns>Content of <paramref name="path"/> as <see cref="T:System.String"/></returns>
+            <param name="path">File path</param>
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.RetrieveDashedStringConsole(System.String)">
+            <returns><paramref name="s"/> extended with dashes intended for Console as string</returns>
+            <param name="s" />
+            <exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.RetrieveDashedStringLog(System.String)">
+            <returns><paramref name="s"/> extended with dashes intended for log file as string</returns>
+            <param name="s" />
+            <exception cref="T:System.ArgumentNullException" />
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.WriteStringToFile(System.String,System.String,System.Text.Encoding)">
+            <summary>Writes the <paramref name="content"/> to <paramref name="path"/></summary><param name="path">File pame</param><param name="content">File content</param><param name="encoding" />
+        </member>
+        <member name="M:Lib.Common.Disc.DiscAccess.WriteStringLineToFile(System.String,System.String,System.Text.Encoding)">
+            <summary>Adds <paramref name="content"/> to specified <paramref name="path"/></summary><param name="path">File path</param><param name="content">Line content</param><param name="encoding" />
         </member>
     </members>
 </doc>

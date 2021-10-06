@@ -16,15 +16,9 @@ Lib.Common
 - UnknownRefException : ExpressionException
 
 Lib.Common.DataTypes:
-- Bit - equivalent of System.Boolean with primary value equal to 0 or 1 - common to SQL
-- Date - equivalent to System.DateTime.Date with primary value within {1900-01-01;9999-12-31} - common to SQL
-- Day - equivalent of System.String with primary value within {01;31} - element of Date
-- Month - equivalent of System.String with primary value within {01;12} - element of Date
-- Year - equivalent of System.String with primary value within {1900;9999} - element of Date
-- Time - equivalent to System.DateTime.Time with primary value within {00:00:00;23:59:59} - common to SQL
-- Hour - equivalent of bool with primary value within {00;23} - element of Time
-- Minute - equivalent of bool with primary value within {00;59} - element of Time
-- Second - equivalent of bool with primary value within {00;59} - element of Time
+- Bit - equivalent to System.Byte - with features from System.Boolean - primary value equal to 0 or 1 - common to SQL
+- Date - equivalent to System.String - with features from System.DateTime.Date - primary value within {1900-01-01;9999-12-31} - common to SQL
+- Time - equivalent to System.String - with features from System.DateTime.Time - primary value within {00:00:00;23:59:59} - common to SQL
 
 Lib.Common.Disc
 - DiscAccess.CreateFile(string path) => System.IO.File.WriteAllText(path, "", Encoding.UTF8);
