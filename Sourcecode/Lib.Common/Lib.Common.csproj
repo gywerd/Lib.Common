@@ -6,11 +6,11 @@
 		<Authors>Daniel Giversen 2021</Authors>
 		<Company />
 		<Copyright>Public Domain</Copyright>
-		<PackageLicenseFile>..\..\LICENSE.txt</PackageLicenseFile>
+		<PackageLicenseFile>..\..\\LICENSE.txt</PackageLicenseFile>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Build">
-		<TargetFramework>net5.0</TargetFramework>
+		<TargetFramework>net6.0</TargetFramework>
 		<OutputType>Library</OutputType>
 		<LangVersion>latest</LangVersion>
 		<PlatformTarget>x64</PlatformTarget>
@@ -24,7 +24,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup Label="Version">
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<AssemblyVersion>$(Version).1</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 	</PropertyGroup>
@@ -43,6 +43,7 @@
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Build Debug" Condition="'$(Configuration)' == 'Debug'">

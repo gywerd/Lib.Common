@@ -2,5 +2,9 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/Lib.Common/v16
-/.vs/slnx.sqlite
+/.vs/
+/Binaries/net6.0/win10-x64/ref
+/Binaries/net6.0-windows/win10-x64/ref
+/Sourcecode/.vs
+/Sourcecode/.vs/Lib.Common
+/Sourcecode/.vs/Lib.Common/DesignTimeBuild
